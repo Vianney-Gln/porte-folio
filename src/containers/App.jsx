@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Header from "../components/header";
-import Heros from "../components/heros";
+import { Header, Apropos, Heros } from "../components";
+
 //style
 import "../styles/App.scss";
 
@@ -10,6 +10,7 @@ const App = () => {
     <div className="App">
       <Header toggle={isOpen} setToggle={setOpen} />
       <Heros />
+      <Apropos />
     </div>
   );
 };
