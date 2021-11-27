@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header, Apropos, Heros } from "../components";
+import { Header, Apropos, Heros, Actuellement } from "../components";
 
 //style
 import "../styles/App.scss";
@@ -11,6 +11,7 @@ const App = () => {
       <Header toggle={isOpen} setToggle={setOpen} />
       <Heros />
       <Apropos />
+      <Actuellement />
     </div>
   );
 };
