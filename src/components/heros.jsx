@@ -1,15 +1,19 @@
 import React from "react";
 //style
 import "../styles/heros.scss";
+import Navigation from "./navigation";
 
-const Heros = () => {
+const Heros = ({ isOpen, setOpen }) => {
   return (
-    <div className="heros">
-      <div className="container-fond-transparent">
-        <h2>Vianney Geloen</h2>
-        <p>Développeur web - junior</p>
+    <>
+      {isOpen && <Navigation />}
+      <div className="heros">
+        <div className="container-fond-transparent">
+          <h2>Vianney Geloen</h2>
+          <p>Développeur web - junior</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

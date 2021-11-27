@@ -4,11 +4,11 @@ import { Header, Apropos, Heros, Actuellement } from "../components";
 import "../styles/App.scss";
 
 const App = () => {
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
   return (
     <div className="App">
-      <Header toggle={isOpen} setToggle={setOpen} />
-      <Heros />
+      <Header isOpen={isOpen} setOpen={setOpen} />
+      <Heros isOpen={isOpen} setOpen={setOpen} />
       <Apropos />
       <Actuellement />
     </div>

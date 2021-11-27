@@ -9,7 +9,14 @@ const Header = ({ isOpen, setOpen }) => {
     <header>
       <div className="avatar">
         <img src={avatar} alt="avatar-vianney" />
-        <Hamburger toggled={isOpen} toggle={setOpen} />
+        <Hamburger
+          onToggle={() => {
+            setOpen(!isOpen);
+            console.log(isOpen);
+          }}
+          toggled={isOpen}
+          toggle={setOpen}
+        />
       </div>
     </header>
   );
