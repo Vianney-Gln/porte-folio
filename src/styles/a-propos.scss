@@ -1,0 +1,16 @@
+.apropos {
+  p {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+
+  .container-avatar {
+    display: flex;
+    justify-content: center;
+    img {
+      margin-top: 40px;
+      width: 85%;
+    }
+  }
+}
