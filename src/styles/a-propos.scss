@@ -1,5 +1,5 @@
 .apropos {
-  p {
+  .qui-suis-je {
     text-align: center;
     font-weight: bold;
     margin-top: 40px;
@@ -11,6 +11,19 @@
     img {
       margin-top: 40px;
       width: 85%;
+    }
+  }
+
+  .texte-presentation {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    p {
+      width: 90%;
+      font-size: 18px;
+      text-align: justify;
     }
   }
 }

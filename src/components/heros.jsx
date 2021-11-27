@@ -9,7 +9,6 @@ const Heros = () => {
         <h2>Vianney Geloen</h2>
         <p>Développeur web - junior</p>
       </div>
-      <button type="button">A propos de moi</button>
     </div>
   );
 };
