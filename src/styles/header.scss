@@ -1,9 +1,8 @@
 .avatar {
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-right: 15px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid white;
   img {
     width: 50px;
     border-radius: 50%;
