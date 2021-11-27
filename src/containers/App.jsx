@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Header, Apropos, Heros, Actuellement } from "../components";
-
 //style
 import "../styles/App.scss";
 
