@@ -12,7 +12,9 @@ const Navigation = ({ isOpen, setOpen }) => {
         </a>
       </li>
       <li>
-        <a href="/">Compétences</a>
+        <a onClick={() => setOpen(!isOpen)} href="#competence">
+          Compétences
+        </a>
       </li>
       <li>
         <a href="/">Portfolio</a>
