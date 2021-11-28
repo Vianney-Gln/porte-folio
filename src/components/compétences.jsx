@@ -53,6 +53,15 @@ const Competences = () => {
             <img src={javascript} alt="icon-javascript" />
           </li>
         </ul>
+        <h4>divers</h4>
+        <ul className="liste-center">
+          <li>
+            <img src={git} alt="icon-git" />
+          </li>
+          <li>
+            <img src={bootstrap} alt="icon-bootstrap" />
+          </li>
+        </ul>
       </div>
     </div>
   );
