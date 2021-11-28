@@ -14,19 +14,23 @@ const PorteFolio = () => {
       <p>
         Vous trouverez ci dessous les projets réalisés pendant la formation.
         <br></br>2 projets fictifs ont déjà été effectués, un troisième est en
-        cours et sera réalisé pour un vrais client!
+        cours et sera réalisé pour un vrai client!
       </p>
       <div className="slide-container">
         <Slide>
           {projets.map((projet, index) => (
             <div className="each-slide" key={projet.id}>
-              <span className="title-project">{`${projet.title.toUpperCase()}: ${
-                projet.lien
-              }`}</span>
+              <span className="title-project">
+                {projet.title.toUpperCase()}
+              </span>
               <div>
                 <img src={projet.image} alt={projet.title} />
               </div>
               <p className="description">{projet.description}</p>
+              <span className="lien">
+                Vous pouvez trouver le lien du projet ici:{" "}
+                <a href={projet.lien}>{projet.lien}</a>
+              </span>
             </div>
           ))}
         </Slide>
