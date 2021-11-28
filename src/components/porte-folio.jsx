@@ -1,6 +1,11 @@
 import React from "react";
+//node module react slideShow
+import { Slide } from "react-slideshow-image";
+//import data projets
+import projets from "../data/projets";
 //style
 import "../styles/porte-folio.scss";
+import "react-slideshow-image/dist/styles.css";
 
 const PorteFolio = () => {
   return (
