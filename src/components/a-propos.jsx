@@ -5,8 +5,8 @@ import avatar from "../images/avatar-vianney-400.png";
 
 const Apropos = () => {
   return (
-    <div className="apropos">
-      <p class="qui-suis-je">QUI SUIS - JE?</p>
+    <div className="apropos" id="a-propos">
+      <p class="qui-suis-je">QUI SUIS - JE ?</p>
       <div className="container-avatar">
         <img src={avatar} alt="avatar-vianney" />
       </div>

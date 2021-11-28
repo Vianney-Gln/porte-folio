@@ -6,7 +6,7 @@ import Navigation from "./navigation";
 const Heros = ({ isOpen, setOpen }) => {
   return (
     <>
-      {isOpen && <Navigation />}
+      {isOpen && <Navigation isOpen={isOpen} setOpen={setOpen} />}
       <div className="heros">
         <div className="container-fond-transparent">
           <h2>Vianney Geloen</h2>
