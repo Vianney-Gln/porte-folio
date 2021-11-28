@@ -16,6 +16,18 @@ const PorteFolio = () => {
         <br></br>2 projets fictifs ont déjà été effectués, un troisième est en
         cours et sera réalisé pour un vrais client!
       </p>
+      <div className="slide-container">
+        <Slide>
+          {projets.map((projet, index) => (
+            <div className="each-slide" key={projet.id}>
+              <div>
+                <img src={projet.image} alt={projet.title} />
+                <span>{projet.title}</span>
+              </div>
+            </div>
+          ))}
+        </Slide>
+      </div>
     </div>
   );
 };

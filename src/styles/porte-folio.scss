@@ -12,4 +12,18 @@
     font-size: 18px;
     text-align: justify;
   }
+
+  .slide-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 40px;
+
+    .each-slide {
+      div {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
