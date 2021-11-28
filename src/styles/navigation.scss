@@ -6,6 +6,8 @@
   position: fixed;
   z-index: 5;
   list-style: none;
+  animation-duration: 0.5s;
+  animation-name: slide;
 
   li {
     border-bottom: 1px solid rgb(29, 28, 28);
@@ -18,5 +20,15 @@
       text-decoration: none;
       color: white;
     }
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
   }
 }
