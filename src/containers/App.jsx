@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Header, Apropos, Heros, Actuellement } from "../components";
+import Competences from "../components/compétences";
 //style
 import "../styles/App.scss";
 
@@ -11,6 +12,7 @@ const App = () => {
       <Heros isOpen={isOpen} setOpen={setOpen} />
       <Apropos />
       <Actuellement />
+      <Competences />
     </div>
   );
 };
