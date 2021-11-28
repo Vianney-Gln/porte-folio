@@ -20,10 +20,13 @@ const PorteFolio = () => {
         <Slide>
           {projets.map((projet, index) => (
             <div className="each-slide" key={projet.id}>
+              <span className="title-project">{`${projet.title.toUpperCase()}: ${
+                projet.lien
+              }`}</span>
               <div>
                 <img src={projet.image} alt={projet.title} />
-                <span>{projet.title}</span>
               </div>
+              <p className="description">{projet.description}</p>
             </div>
           ))}
         </Slide>
