@@ -17,7 +17,9 @@ const Navigation = ({ isOpen, setOpen }) => {
         </a>
       </li>
       <li>
-        <a href="/">Portfolio</a>
+        <a onClick={() => setOpen(!isOpen)} href="#porte-folio">
+          Portfolio
+        </a>
       </li>
       <li>
         <a href="/">Contact</a>

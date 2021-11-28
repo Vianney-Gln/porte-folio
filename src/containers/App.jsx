@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Header, Apropos, Heros, Actuellement } from "../components";
+import {
+  Header,
+  Apropos,
+  Heros,
+  Actuellement,
+  PorteFolio,
+} from "../components";
 import Competences from "../components/compétences";
 //style
 import "../styles/App.scss";
@@ -13,6 +19,7 @@ const App = () => {
       <Apropos />
       <Actuellement />
       <Competences />
+      <PorteFolio />
     </div>
   );
 };
