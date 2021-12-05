@@ -10,7 +10,7 @@ const Contact = () => {
         N'hésitez pas à me contacter, je me ferais un plaisir d'échanger avec
         vous
       </p>
-      <form>
+      <form action="https://formspree.io/f/mpzbavkb" method="post">
         <label for="name">
           <input type="text" placeholder="votre nom" id="name" name="name" />
         </label>
