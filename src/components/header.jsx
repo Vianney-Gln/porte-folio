@@ -8,7 +8,9 @@ const Header = ({ isOpen, setOpen }) => {
   return (
     <header>
       <div className="avatar">
-        <img src={avatar} alt="avatar-vianney" />
+        <a href="/">
+          <img src={avatar} alt="avatar-vianney" />
+        </a>
         <Hamburger
           onToggle={() => {
             setOpen(!isOpen);
