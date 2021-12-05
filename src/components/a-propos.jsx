@@ -7,7 +7,9 @@ const Apropos = () => {
   return (
     <div className="apropos" id="a-propos">
       <p class="qui-suis-je">
-        <span>Contactez moi!</span>
+        <span>
+          <a href="#contact">Contactez moi!</a>
+        </span>
       </p>
       <div className="container-avatar">
         <img src={avatar} alt="avatar-vianney" />

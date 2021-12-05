@@ -22,7 +22,9 @@ const Navigation = ({ isOpen, setOpen }) => {
         </a>
       </li>
       <li>
-        <a href="/">Contact</a>
+        <a onClick={() => setOpen(!isOpen)} href="#contact">
+          Contact
+        </a>
       </li>
     </ul>
   );

@@ -4,7 +4,7 @@ import "../styles/contact.scss";
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <h2>Contactez moi</h2>
       <p>
         N'hésitez pas à me contacter, je me ferais un plaisir d'échanger avec
