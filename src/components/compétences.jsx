@@ -23,7 +23,7 @@ const Competences = () => {
         l'environnement Javascript :
       </p>
       <div className="section-langages">
-        <h4>Back end</h4>
+        <h4>Back end: </h4>
         <ul className="liste">
           <li>
             <img src={nodeJs} alt="icon-nodeJs" />
@@ -35,7 +35,7 @@ const Competences = () => {
             <img src={mySql} alt="icon-mySql" />
           </li>
         </ul>
-        <h4>Front end</h4>
+        <h4>Front end: </h4>
         <ul className="liste">
           <li>
             <img src={html5} alt="icon-html5" />
@@ -53,7 +53,7 @@ const Competences = () => {
             <img src={javascript} alt="icon-javascript" />
           </li>
         </ul>
-        <h4>divers</h4>
+        <h4>divers: </h4>
         <ul className="liste-center">
           <li>
             <img src={git} alt="icon-git" />
