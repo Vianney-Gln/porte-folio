@@ -6,7 +6,10 @@ const Contact = () => {
   return (
     <div className="contact">
       <h2>Contactez moi</h2>
-      <p>N'hésitez pas à me contacter, je vous répondrais dès que possible</p>
+      <p>
+        N'hésitez pas à me contacter, je me ferais un plaisir d'échanger avec
+        vous
+      </p>
       <form>
         <label for="name">
           <input type="text" placeholder="votre nom" id="name" name="name" />
