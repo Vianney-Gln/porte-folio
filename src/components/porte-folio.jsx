@@ -25,15 +25,17 @@ const PorteFolio = () => {
               </span>
               <div>
                 <img src={projet.image} alt={projet.title} />
+                <span className="lien">
+                  <a href={projet.lien}>Visitez le site</a>
+                </span>
               </div>
-              <p className="description">{projet.description}</p>
-              <span className="lien">
-                Vous pouvez trouver le lien du projet ici:{" "}
-                <a href={projet.lien}>{projet.lien}</a>
-              </span>
             </div>
           ))}
         </Slide>
+        <h2 className="number-project">Projet 1</h2>
+        <p className="description">{projets[0].description}</p>
+        <h2 className="number-project">Projet 2</h2>
+        <p className="description">{projets[1].description}</p>
       </div>
     </div>
   );

@@ -36,13 +36,20 @@
         margin: 0;
         margin-top: 20px;
       }
-      .lien {
-        display: block;
-        text-align: justify;
-      }
     }
-    button {
-      transform: translateY(-80px);
+  }
+  .lien {
+    text-align: justify;
+    background-color: white;
+    border: 1px solid black;
+    a {
+      text-decoration: none;
+      color: black;
     }
+  }
+  h2 {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
   }
 }
