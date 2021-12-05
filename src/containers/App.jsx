@@ -5,8 +5,10 @@ import {
   Heros,
   Actuellement,
   PorteFolio,
+  Contact,
+  Competences,
 } from "../components";
-import Competences from "../components/compétences";
+
 //style
 import "../styles/App.scss";
 
@@ -20,6 +22,7 @@ const App = () => {
       <Actuellement />
       <Competences />
       <PorteFolio />
+      <Contact />
     </div>
   );
 };
