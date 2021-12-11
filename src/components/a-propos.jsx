@@ -1,7 +1,7 @@
 import React from "react";
 //style
 import "../styles/a-propos.scss";
-import avatar from "../images/avatar-vianney-400.png";
+import photo from "../images/photo-vianney.jpg";
 
 const Apropos = () => {
   return (
@@ -12,7 +12,7 @@ const Apropos = () => {
         </span>
       </p>
       <div className="container-avatar">
-        <img src={avatar} alt="avatar-vianney" />
+        <img src={photo} alt="avatar-vianney" />
       </div>
       <div className="texte-presentation">
         <p>
