@@ -11,14 +11,17 @@ const Header = ({ isOpen, setOpen }) => {
         <a href="/">
           <img src={avatar} alt="avatar-vianney" />
         </a>
-        <Hamburger
-          onToggle={() => {
-            setOpen(!isOpen);
-            console.log(isOpen);
-          }}
-          toggled={isOpen}
-          toggle={setOpen}
-        />
+
+        <div className="hamburger">
+          <Hamburger
+            onToggle={() => {
+              setOpen(!isOpen);
+              console.log(isOpen);
+            }}
+            toggled={isOpen}
+            toggle={setOpen}
+          />
+        </div>
       </div>
     </header>
   );

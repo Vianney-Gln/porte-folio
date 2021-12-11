@@ -8,3 +8,11 @@
     border-radius: 50%;
   }
 }
+
+@media screen and (min-width: 720px) {
+  .avatar {
+    .hamburger {
+      display: none;
+    }
+  }
+}
