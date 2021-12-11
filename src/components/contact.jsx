@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="contact" id="contact">
       <h2>Contactez moi</h2>
-      <p>
+      <p className="phrase-contactez-moi">
         N'hésitez pas à me contacter, je me ferais un plaisir d'échanger avec
         vous
       </p>
@@ -35,6 +35,18 @@ const Contact = () => {
         </label>
         <button type="submit">Envoyer</button>
       </form>
+      <p className="mail">
+        <i class="far fa-envelope"></i>
+        <span>vgeloen@gmail.com</span>
+      </p>
+      <p className="github">
+        <i class="fab fa-github"></i>
+        <span>
+          <a href="https://github.com/Vianney-Gln">
+            https://github.com/Vianney-Gln
+          </a>
+        </span>
+      </p>
     </div>
   );
 };

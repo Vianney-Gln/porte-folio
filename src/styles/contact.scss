@@ -12,7 +12,7 @@
     text-align: center;
     padding-top: 20px;
   }
-  p {
+  .phrase-contactez-moi {
     text-align: center;
     margin: 0;
     padding: 0;
@@ -50,6 +50,20 @@
       color: white;
       border: 1px solid white;
       border-radius: 5px;
+    }
+  }
+  .mail,
+  .github {
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    span {
+      margin-left: 5px;
+      color: grey;
+      a {
+        text-decoration: none;
+        color: grey;
+      }
     }
   }
 }
