@@ -11,6 +11,22 @@ const Header = ({ isOpen, setOpen }) => {
         <a href="/">
           <img src={avatar} alt="avatar-vianney" />
         </a>
+        <nav className="nav-header">
+          <ul className="list-header">
+            <li>
+              <a href="#a-propos">A propos</a>
+            </li>
+            <li>
+              <a href="#competence">Compétences</a>
+            </li>
+            <li>
+              <a href="#porte-folio">Portfolio</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
         <div className="hamburger">
           <Hamburger

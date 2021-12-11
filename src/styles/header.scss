@@ -3,6 +3,9 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid white;
+  .nav-header {
+    display: none;
+  }
   img {
     width: 50px;
     border-radius: 50%;
@@ -11,6 +14,28 @@
 
 @media screen and (min-width: 720px) {
   .avatar {
+    justify-content: space-around;
+    .nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 60%;
+      .list-header {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        li {
+          margin-right: 30px;
+          a {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
     .hamburger {
       display: none;
     }
