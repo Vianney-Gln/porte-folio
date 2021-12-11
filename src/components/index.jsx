@@ -5,6 +5,7 @@ import Actuellement from "./actuellement";
 import PorteFolio from "./porte-folio";
 import Contact from "../components/contact";
 import Competences from "../components/compétences";
+import Footer from "./footer";
 
 export {
   Heros,
@@ -14,4 +15,5 @@ export {
   PorteFolio,
   Contact,
   Competences,
+  Footer,
 };

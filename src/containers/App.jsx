@@ -7,6 +7,7 @@ import {
   PorteFolio,
   Contact,
   Competences,
+  Footer,
 } from "../components";
 
 //style
@@ -23,6 +24,7 @@ const App = () => {
       <Competences />
       <PorteFolio />
       <Contact />
+      <Footer />
     </div>
   );
 };
