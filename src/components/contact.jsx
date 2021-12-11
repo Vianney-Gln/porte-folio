@@ -47,6 +47,12 @@ const Contact = () => {
           </a>
         </span>
       </p>
+      <p className="linkedin">
+        <i class="fab fa-linkedin"></i>
+        <span>
+          <a href="https://www.linkedin.com/in/vianneygeloen/">Linkedin</a>
+        </span>
+      </p>
     </div>
   );
 };
