@@ -29,3 +29,23 @@
     }
   }
 }
+
+@media screen and (min-width: 720px) {
+  .heros {
+    height: 90vh;
+    justify-content: center;
+    background-image: url("../images/monitor-grosse-resolution.jpg");
+
+    .container-fond-transparent {
+      opacity: 0.9;
+      margin: 0;
+      h2 {
+        font-size: 72px;
+      }
+
+      p {
+        font-size: 48px;
+      }
+    }
+  }
+}
