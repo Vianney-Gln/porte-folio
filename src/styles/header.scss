@@ -29,9 +29,21 @@
 
         li {
           margin-right: 30px;
+          cursor: pointer;
+          padding: 2px;
+          border: 1px solid transparent;
           a {
             color: white;
             text-decoration: none;
+          }
+        }
+        li:hover {
+          background-color: white;
+          border-color: white;
+          border-radius: 5px;
+
+          a {
+            color: black;
           }
         }
       }
