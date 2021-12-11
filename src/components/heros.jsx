@@ -12,6 +12,9 @@ const Heros = ({ isOpen, setOpen }) => {
           <h2>Vianney Geloen</h2>
           <p>Développeur web - junior</p>
         </div>
+        <a className="boutton-contactez-moi-desktop" href="#contact">
+          Contactez moi!
+        </a>
       </div>
     </>
   );
