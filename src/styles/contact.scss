@@ -32,6 +32,7 @@
       margin-top: 10px;
       background-color: black;
       color: white;
+      border: 1px solid white;
     }
     textarea {
       width: 100%;
@@ -39,6 +40,7 @@
       margin-top: 10px;
       background-color: black;
       color: white;
+      border: 1px solid white;
     }
     button {
       width: 30%;
@@ -94,7 +96,6 @@
           cursor: pointer;
           color: black;
           background-color: white;
-
           transform: scale(1.1);
         }
       }
