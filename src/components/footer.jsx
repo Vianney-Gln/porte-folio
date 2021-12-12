@@ -21,7 +21,7 @@ const Footer = () => {
           </li>
           <li className="element-list-footer">|</li>
           <li className="element-list-footer">
-            <a href="porte-folio">Portfolio</a>
+            <a href="#porte-folio">Portfolio</a>
           </li>
           <li className="element-list-footer">|</li>
           <li className="element-list-footer">
