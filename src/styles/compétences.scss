@@ -23,7 +23,8 @@
       margin-top: 20px;
     }
 
-    ul {
+    .backend,
+    .frontend {
       list-style: none;
       width: 100%;
       display: flex;
@@ -38,10 +39,48 @@
       }
     }
 
-    .liste-center {
+    .divers {
       display: flex;
       justify-content: center;
       align-items: center;
+      list-style: none;
+      margin-top: 20px;
+
+      li {
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .competences {
+    .description-competences {
+      width: 50%;
+      p {
+        text-align: center;
+      }
+    }
+    .section-langages {
+      display: flex;
+      justify-content: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        width: calc((100%) / 3);
+
+        .backend,
+        .frontend,
+        .divers {
+          justify-content: center;
+
+          li {
+            margin: 5px;
+          }
+        }
+      }
     }
   }
 }
