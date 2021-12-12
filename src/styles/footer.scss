@@ -1,0 +1,38 @@
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+
+  p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .nav-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .list-footer {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .element-list-footer {
+        margin: 5px;
+
+        a {
+          text-decoration: none;
+          color: grey;
+        }
+      }
+    }
+  }
+}

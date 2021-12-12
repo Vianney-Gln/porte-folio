@@ -1,0 +1,117 @@
+.contact {
+  width: 100%;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-image: url("../images/background-contact-1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .phrase-contactez-moi {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    background-color: black;
+    opacity: 0.8;
+  }
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+    }
+    button {
+      width: 30%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+      border-radius: 5px;
+    }
+  }
+  .mail,
+  .github,
+  .linkedin {
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    span {
+      margin-left: 5px;
+      color: grey;
+      a {
+        text-decoration: none;
+        color: grey;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .container-contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url("../images/background-contact.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .contact {
+      width: 50%;
+      margin-bottom: 20px;
+      background-image: none;
+      background-color: black;
+      opacity: 0.8;
+
+      form {
+        button {
+          transition: all 0.8s ease;
+        }
+        button:hover {
+          cursor: pointer;
+          color: black;
+          background-color: white;
+          transform: scale(1.1);
+        }
+      }
+
+      .linkedin:hover,
+      .github:hover {
+        span {
+          display: inline-block;
+          a {
+            display: inline-block;
+            color: white;
+            transition: all 0.8s ease;
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+}
