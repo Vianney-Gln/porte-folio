@@ -11,7 +11,7 @@ const PorteFolio = () => {
   return (
     <div className="porteFolio" id="porte-folio">
       <h2>Porte folio</h2>
-      <p>
+      <p className="descriptif-porteFolio">
         Vous trouverez ci dessous les projets réalisés pendant la formation.
         <br></br>2 projets fictifs ont déjà été effectués, un troisième est en
         cours et sera réalisé pour un vrai client !
@@ -32,10 +32,16 @@ const PorteFolio = () => {
             </div>
           ))}
         </Slide>
-        <h2 className="number-project">Projet 1</h2>
-        <p className="description">{projets[0].description}</p>
-        <h2 className="number-project">Projet 2</h2>
-        <p className="description">{projets[1].description}</p>
+        <div className="projects">
+          <div className="oneProject">
+            <h2 className="number-project">Projet 1</h2>
+            <p className="description">{projets[0].description}</p>
+          </div>
+          <div className="oneProject">
+            <h2 className="number-project">Projet 2</h2>
+            <p className="description">{projets[1].description}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

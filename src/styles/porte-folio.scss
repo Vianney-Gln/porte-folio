@@ -59,3 +59,34 @@
     margin-top: 20px;
   }
 }
+
+@media screen and (min-width: 720px) {
+  .porteFolio {
+    .descriptif-porteFolio {
+      text-align: center;
+    }
+    .slide-container {
+      .title-project {
+        font-size: 24px;
+      }
+    }
+    .projects {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .oneProject {
+        width: 45%;
+
+        h2 {
+          width: 90%;
+        }
+
+        p {
+          text-align: justify;
+          width: 90%;
+        }
+      }
+    }
+  }
+}
