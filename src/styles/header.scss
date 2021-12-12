@@ -14,8 +14,14 @@
 
 @media screen and (min-width: 720px) {
   header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
     .avatar {
       justify-content: space-around;
+      border: none;
 
       .nav-header {
         display: flex;
