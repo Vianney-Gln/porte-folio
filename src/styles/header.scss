@@ -10,6 +10,13 @@
     width: 50px;
     border-radius: 50%;
   }
+  /* animation au scroll masquée en mobile */
+  .blackHeader {
+    display: none;
+  }
+  .transitionHeader {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 720px) {
@@ -60,5 +67,13 @@
         display: none;
       }
     }
+  }
+  /* anmimation au scroll */
+  .blackHeader {
+    background-color: black;
+    transition: all 0.8s ease;
+  }
+  .transitionHeader {
+    transition: all 0.8s ease;
   }
 }
