@@ -46,9 +46,17 @@
     }
 
     .container-avatar {
+      width: 50%;
       img {
-        width: 50%;
+        width: 200px;
         height: auto;
+      }
+    }
+    .texte-presentation {
+      width: 50%;
+      p {
+        padding: 0;
+        margin: 0;
       }
     }
   }

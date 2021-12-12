@@ -8,11 +8,9 @@ const Header = ({ isOpen, setOpen }) => {
   //states
   const [displayHeader, setDisplayHeader] = useState(false);
 
-  window.addEventListener("scroll", (e) => {
+  window.addEventListener("scroll", () => {
     let scrollValue =
       (window.innerHeight + window.scrollY) / document.body.offsetHeight;
-    console.log(scrollValue);
-
     if (scrollValue > 0.35) {
       setDisplayHeader(true);
     } else {
