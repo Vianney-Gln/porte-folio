@@ -69,3 +69,48 @@
     }
   }
 }
+
+@media screen and (min-width: 720px) {
+  .container-contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url("../images/background-contact.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .contact {
+      width: 50%;
+      margin-bottom: 20px;
+      background-image: none;
+      background-color: black;
+      opacity: 0.8;
+
+      form {
+        button {
+          transition: all 0.8s ease;
+        }
+        button:hover {
+          cursor: pointer;
+          color: black;
+          background-color: white;
+
+          transform: scale(1.1);
+        }
+      }
+
+      .linkedin:hover,
+      .github:hover {
+        span {
+          display: inline-block;
+          a {
+            display: inline-block;
+            color: white;
+            transition: all 0.8s ease;
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+}
