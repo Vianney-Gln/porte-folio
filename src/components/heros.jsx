@@ -4,6 +4,9 @@ import "../styles/heros.scss";
 import Navigation from "./navigation";
 
 const Heros = ({ isOpen, setOpen }) => {
+  window.addEventListener("scroll", () => {
+    setOpen(false);
+  });
   return (
     <>
       {isOpen && <Navigation isOpen={isOpen} setOpen={setOpen} />}
