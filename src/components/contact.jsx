@@ -29,10 +29,16 @@ const Contact = () => {
               name="email"
               id="email"
               placeholder="votre email"
+              required
             />
           </label>
           <label for="message">
-            <textarea name="message" id="message" placeholder="votre message" />
+            <textarea
+              name="message"
+              id="message"
+              placeholder="votre message"
+              minLength="10"
+            />
           </label>
           <button type="submit">Envoyer</button>
         </form>

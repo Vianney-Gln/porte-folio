@@ -45,7 +45,6 @@ const Header = ({ isOpen, setOpen }) => {
           <Hamburger
             onToggle={() => {
               setOpen(!isOpen);
-              console.log(isOpen);
             }}
             toggled={isOpen}
             toggle={setOpen}
