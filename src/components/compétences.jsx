@@ -60,7 +60,7 @@ const Competences = () => {
           </ul>
         </div>
         <div>
-          <h4>divers: </h4>
+          <h4>Divers: </h4>
           <ul className="divers">
             <li>
               <img src={git} alt="icon-git" />
