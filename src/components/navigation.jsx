@@ -8,7 +8,7 @@ const Navigation = ({ isOpen, setOpen }) => {
     <ul className={"navigation"}>
       <li>
         <a onClick={() => setOpen(!isOpen)} href="#a-propos">
-          A propos
+          À propos
         </a>
       </li>
       <li>

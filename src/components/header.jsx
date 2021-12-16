@@ -28,7 +28,7 @@ const Header = ({ isOpen, setOpen }) => {
           {!displayHeader && (
             <ul className="list-header">
               <li>
-                <a href="#a-propos">A propos</a>
+                <a href="#a-propos">À propos</a>
               </li>
               <li>
                 <a href="#competence">Compétences</a>
