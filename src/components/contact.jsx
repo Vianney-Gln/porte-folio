@@ -13,12 +13,12 @@ const Contact = () => {
         </p>
         <form action="https://formspree.io/f/mpzbavkb" method="post">
           <label for="name">
-            <input type="text" placeholder="votre nom" id="name" name="name" />
+            <input type="text" placeholder="Votre nom" id="name" name="name" />
           </label>
           <label for="firstname">
             <input
               type="text"
-              placeholder="votre prénom"
+              placeholder="Votre prénom"
               id="firstname"
               name="firstname"
             />
@@ -28,7 +28,7 @@ const Contact = () => {
               type="email"
               name="email"
               id="email"
-              placeholder="votre email"
+              placeholder="Votre email"
               required
             />
           </label>
@@ -36,7 +36,7 @@ const Contact = () => {
             <textarea
               name="message"
               id="message"
-              placeholder="votre message"
+              placeholder="Votre message"
               minLength="10"
             />
           </label>

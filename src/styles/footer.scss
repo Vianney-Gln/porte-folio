@@ -30,7 +30,11 @@
 
         a {
           text-decoration: none;
+          transition: all 0.8s ease;
           color: grey;
+        }
+        a:hover {
+          color: white;
         }
       }
     }

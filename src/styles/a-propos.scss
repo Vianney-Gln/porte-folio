@@ -39,21 +39,22 @@
 
 @media screen and (min-width: 720px) {
   .apropos {
-    max-height: 400px;
+    height: 500px;
     display: flex;
+    justify-content: space-around;
     width: 100%;
+    margin-top: 40px;
     .qui-suis-je {
       display: none;
     }
 
     .container-avatar {
       img {
-        width: 40%;
-        height: auto;
+        width: 250px;
       }
     }
     .texte-presentation {
-      width: 60%;
+      width: 50%;
       p {
         padding: 0;
         margin: 0;

@@ -34,11 +34,11 @@ const PorteFolio = () => {
         </Slide>
         <div className="projects">
           <div className="oneProject">
-            <h2 className="number-project">Projet 1</h2>
+            <h2 className="number-project">Projet 1: {projets[0].title}</h2>
             <p className="description">{projets[0].description}</p>
           </div>
           <div className="oneProject">
-            <h2 className="number-project">Projet 2</h2>
+            <h2 className="number-project">Projet 2: {projets[1].title}</h2>
             <p className="description">{projets[1].description}</p>
           </div>
         </div>

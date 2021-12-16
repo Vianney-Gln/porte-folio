@@ -27,3 +27,10 @@
     }
   }
 }
+
+@media screen and (min-width: 720px) {
+  .actuellement {
+    background-position-x: left;
+    height: 400px;
+  }
+}
