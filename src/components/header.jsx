@@ -21,7 +21,7 @@ const Header = ({ isOpen, setOpen }) => {
   return (
     <header className={displayHeader ? "blackHeader" : "transitionHeader"}>
       <div className="avatar">
-        <a href="/#heros">
+        <a href="#accueil">
           <img src={avatar} alt="avatar-vianney" />
         </a>
         <nav className="nav-header">

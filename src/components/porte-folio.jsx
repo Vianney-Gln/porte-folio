@@ -10,7 +10,7 @@ import "react-slideshow-image/dist/styles.css";
 const PorteFolio = () => {
   return (
     <div className="porteFolio" id="porte-folio">
-      <h2>Porte folio</h2>
+      <h2>Portfolio</h2>
       <p className="descriptif-porteFolio">
         Vous trouverez ci dessous les projets réalisés pendant la formation.
         <br></br>2 projets fictifs ont déjà été effectués, un troisième est en

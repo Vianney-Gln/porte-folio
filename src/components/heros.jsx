@@ -10,7 +10,7 @@ const Heros = ({ isOpen, setOpen }) => {
   return (
     <>
       {isOpen && <Navigation isOpen={isOpen} setOpen={setOpen} />}
-      <div className="heros" id="heros">
+      <div className="heros" id="accueil">
         <div className="container-fond-transparent">
           <h2>Vianney Geloen</h2>
           <p>Développeur web - junior</p>
