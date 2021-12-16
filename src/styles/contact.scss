@@ -92,20 +92,20 @@
       form {
         button {
           transition: all 0.8s ease;
+          cursor: pointer;
         }
         button:hover {
-          cursor: pointer;
           color: black;
           background-color: white;
           transform: scale(1.1);
         }
       }
 
-      .linkedin:hover,
-      .github:hover {
+      .linkedin,
+      .github {
         span {
           display: inline-block;
-          a {
+          a:hover {
             display: inline-block;
             color: white;
             transition: all 0.8s ease;
