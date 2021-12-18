@@ -29,10 +29,18 @@
 }
 
 @media screen and (min-width: 720px) {
-  .actuellement {
-    background-position-x: left;
-    height: 400px;
+  .container-actuellement {
+    background-color: black;
+    opacity: 0.8;
+    position: relative;
+    z-index: 12;
+    .actuellement {
+      margin-top: 0;
 
-    justify-content: center;
+      background-position-x: left;
+      height: 400px;
+
+      justify-content: center;
+    }
   }
 }

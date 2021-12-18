@@ -9,6 +9,7 @@ import {
   Competences,
   Footer,
 } from "../components";
+import Background from "../components/background";
 
 //style
 import "../styles/App.scss";
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <div className="App">
       <Header isOpen={isOpen} setOpen={setOpen} />
+      <Background />
       <Heros isOpen={isOpen} setOpen={setOpen} />
       <Apropos />
       <Actuellement />
