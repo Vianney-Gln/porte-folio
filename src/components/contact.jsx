@@ -5,14 +5,16 @@ import "../styles/contact.scss";
 
 const Contact = () => {
   return (
-    <FadeIn>
-      <div className="container-contact">
-        <div className="contact" id="contact">
-          <h2>Contactez moi</h2>
+    <div className="container-contact">
+      <div className="contact" id="contact">
+        <h2>Contactez moi</h2>
+        <FadeIn>
           <p className="phrase-contactez-moi">
             N'hésitez pas à me contacter, je me ferais un plaisir d'échanger
             avec vous
           </p>
+        </FadeIn>
+        <FadeIn>
           <form action="https://formspree.io/f/mpzbavkb" method="post">
             <label for="name">
               <input
@@ -49,6 +51,8 @@ const Contact = () => {
             </label>
             <button type="submit">Envoyer</button>
           </form>
+        </FadeIn>
+        <FadeIn>
           <p className="mail">
             <i class="far fa-envelope"></i>
             <span>vgeloen@gmail.com</span>
@@ -67,9 +71,9 @@ const Contact = () => {
               <a href="https://www.linkedin.com/in/vianneygeloen/">Linkedin</a>
             </span>
           </p>
-        </div>
+        </FadeIn>
       </div>
-    </FadeIn>
+    </div>
   );
 };
 

@@ -9,6 +9,7 @@ import {
   Competences,
   Footer,
 } from "../components";
+import Background from "../components/background";
 
 //style
 import "../styles/App.scss";
@@ -17,6 +18,7 @@ const App = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="App">
+      <Background />
       <Header isOpen={isOpen} setOpen={setOpen} />
       <Heros isOpen={isOpen} setOpen={setOpen} />
       <Apropos />

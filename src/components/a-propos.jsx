@@ -6,13 +6,13 @@ import FadeIn from "../animation/animation";
 
 const Apropos = () => {
   return (
-    <FadeIn>
-      <div className="apropos" id="a-propos">
-        <p class="qui-suis-je">
-          <span>
-            <a href="#contact">Contactez moi!</a>
-          </span>
-        </p>
+    <div className="apropos" id="a-propos">
+      <p class="qui-suis-je">
+        <span>
+          <a href="#contact">Contactez moi!</a>
+        </span>
+      </p>
+      <FadeIn>
         <div className="container-avatar">
           <img src={photo} alt="avatar-vianney" />
 
@@ -41,8 +41,8 @@ const Apropos = () => {
             </p>
           </div>
         </div>
-      </div>
-    </FadeIn>
+      </FadeIn>
+    </div>
   );
 };
 

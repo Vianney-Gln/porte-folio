@@ -56,29 +56,34 @@
 }
 
 @media screen and (min-width: 720px) {
-  .competences {
-    height: 400px;
-    .description-competences {
-      width: 50%;
-      p {
-        text-align: center;
+  .container-competence {
+    position: relative;
+    z-index: 12;
+    background-color: black;
+    .competences {
+      height: 400px;
+      .description-competences {
+        width: 50%;
+        p {
+          text-align: center;
+        }
       }
-    }
-    .section-langages {
-      display: flex;
-      justify-content: center;
-      div {
+      .section-langages {
         display: flex;
-        flex-direction: column;
-        width: calc((100%) / 3);
+        justify-content: center;
+        div {
+          display: flex;
+          flex-direction: column;
+          width: calc((100%) / 3);
 
-        .backend,
-        .frontend,
-        .divers {
-          justify-content: center;
+          .backend,
+          .frontend,
+          .divers {
+            justify-content: center;
 
-          li {
-            margin: 5px;
+            li {
+              margin: 5px;
+            }
           }
         }
       }

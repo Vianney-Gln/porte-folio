@@ -1,0 +1,17 @@
+.background {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  max-width: 100vw;
+  img {
+    width: 100vw;
+    object-fit: cover;
+    object-position: 0px -300px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .background {
+    display: block;
+  }
+}

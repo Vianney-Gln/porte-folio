@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FadeIn from "../animation/animation";
 import avatar from "../images/avatar-vianney-200.png";
 import Hamburger from "hamburger-react";
 //style
@@ -20,43 +19,41 @@ const Header = ({ isOpen, setOpen }) => {
   });
 
   return (
-    <FadeIn>
-      <header className={displayHeader ? "blackHeader" : "transitionHeader"}>
-        <div className="avatar">
-          <a href="#accueil">
-            <img src={avatar} alt="avatar-vianney" />
-          </a>
-          <nav className="nav-header">
-            {!displayHeader && (
-              <ul className="list-header">
-                <li>
-                  <a href="#a-propos">À propos</a>
-                </li>
-                <li>
-                  <a href="#competence">Compétences</a>
-                </li>
-                <li>
-                  <a href="#porte-folio">Portfolio</a>
-                </li>
-                <li>
-                  <a href="#contact">Contact</a>
-                </li>
-              </ul>
-            )}
-          </nav>
+    <header className={displayHeader ? "blackHeader" : "transitionHeader"}>
+      <div className="avatar">
+        <a href="#accueil">
+          <img src={avatar} alt="avatar-vianney" />
+        </a>
+        <nav className="nav-header">
+          {!displayHeader && (
+            <ul className="list-header">
+              <li>
+                <a href="#a-propos">À propos</a>
+              </li>
+              <li>
+                <a href="#competence">Compétences</a>
+              </li>
+              <li>
+                <a href="#porte-folio">Portfolio</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          )}
+        </nav>
 
-          <div className="hamburger">
-            <Hamburger
-              onToggle={() => {
-                setOpen(!isOpen);
-              }}
-              toggled={isOpen}
-              toggle={setOpen}
-            />
-          </div>
+        <div className="hamburger">
+          <Hamburger
+            onToggle={() => {
+              setOpen(!isOpen);
+            }}
+            toggled={isOpen}
+            toggle={setOpen}
+          />
         </div>
-      </header>
-    </FadeIn>
+      </div>
+    </header>
   );
 };
 
