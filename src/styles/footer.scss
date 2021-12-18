@@ -42,14 +42,16 @@
 }
 
 @media screen and (min-width: 720px) {
-  .footer {
-    margin-top: 0;
+  .container-footer {
     position: relative;
     z-index: 13;
     background-color: black;
+    .footer {
+      margin-top: 0;
 
-    p {
-      padding-top: 10px;
+      p {
+        padding-top: 10px;
+      }
     }
   }
 }

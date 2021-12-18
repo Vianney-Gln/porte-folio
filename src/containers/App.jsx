@@ -18,8 +18,8 @@ const App = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="App">
-      <Header isOpen={isOpen} setOpen={setOpen} />
       <Background />
+      <Header isOpen={isOpen} setOpen={setOpen} />
       <Heros isOpen={isOpen} setOpen={setOpen} />
       <Apropos />
       <Actuellement />
