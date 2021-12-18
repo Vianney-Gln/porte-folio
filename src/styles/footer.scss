@@ -40,3 +40,18 @@
     }
   }
 }
+
+@media screen and (min-width: 720px) {
+  .container-footer {
+    position: relative;
+    z-index: 13;
+    background-color: black;
+    .footer {
+      margin-top: 0;
+
+      p {
+        padding-top: 10px;
+      }
+    }
+  }
+}
