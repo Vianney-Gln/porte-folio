@@ -15,7 +15,9 @@ const PorteFolio = () => {
       <p className="descriptif-porteFolio">
         Vous trouverez ci dessous les projets réalisés pendant la formation.
         <br></br>2 projets fictifs ont déjà été effectués, un troisième est en
-        cours et sera réalisé pour un vrai client !
+        cours et sera réalisé pour un vrai client !<br></br>Vous trouverez
+        également un travail effectué lors de l'évènement Hackathon Manomano
+        réalisé les 20 et 21 Janvier 2022.
       </p>
       <div className="slide-container">
         <Slide>
