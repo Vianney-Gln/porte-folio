@@ -19,7 +19,7 @@ const PorteFolio = () => {
       </p>
       <div className="slide-container">
         <Slide>
-          {projets.map((projet, index) => (
+          {projets.map((projet) => (
             <div className="each-slide" key={projet.id}>
               <span className="title-project">
                 {projet.title.toUpperCase()}
@@ -35,14 +35,12 @@ const PorteFolio = () => {
         </Slide>
         <FadeIn>
           <div className="projects">
-            <div className="oneProject">
-              <h2 className="number-project">Projet 1: {projets[0].title}</h2>
-              <p className="description">{projets[0].description}</p>
-            </div>
-            <div className="oneProject">
-              <h2 className="number-project">Projet 2: {projets[1].title}</h2>
-              <p className="description">{projets[1].description}</p>
-            </div>
+            {projets.map((pro) => (
+              <div className="oneProject">
+                <h2 className="number-project">{pro.title}</h2>
+                <p className="description">{pro.description}</p>
+              </div>
+            ))}
           </div>
         </FadeIn>
       </div>

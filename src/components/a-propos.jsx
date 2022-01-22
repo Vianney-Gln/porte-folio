@@ -21,7 +21,7 @@ const Apropos = () => {
               Bonjour, je m'appelle Vianney, développeur web junior.<br></br>
               <br></br>
               Fort d'une expèrience d'opérateur logistique depuis 11 ans, j'ai
-              acquéris de très bonnes compétences en travail d'équipe, en
+              acquis de très bonnes compétences en travail d'équipe, en
               relationnel et aussi en rigueur.<br></br>
               <br></br>
               J'ai cependant décidé de me reconvertir dans le développement web,
