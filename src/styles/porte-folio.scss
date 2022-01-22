@@ -40,7 +40,6 @@
   }
   .lien {
     text-align: justify;
-    background-color: white;
     border: 1px solid black;
     padding: 2px;
     border-radius: 5px;
@@ -66,6 +65,17 @@
     z-index: 12;
     background-color: black;
     margin-top: -5px;
+
+    .lien {
+      transition: all 0.5s ease-in;
+    }
+
+    .lien:hover {
+      background-color: white;
+      a {
+        color: black;
+      }
+    }
 
     .descriptif-porteFolio {
       text-align: center;

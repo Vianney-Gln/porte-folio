@@ -21,10 +21,9 @@ const projets = [
   {
     id: 3,
     title: "Hackathon 2022 Manomano",
-    lien: "",
+    lien: "https://hackathon2022-manomano.netlify.app/",
     image: imageManomano,
-    description:
-      "En équipe de 4, nous avions 48h pour répondre à une problématique visant à améliorer l'expérience utilisateur du site E-commerce de Manomano! Nous avons imaginés une fonctionnalité permettant à un novice en bricolage de décrire un projet via un formulaire et l'application lui propose tous les matériaux, outils et tutoriels dont il a besoin! Un beau challenge, pour un défi relevé ! ",
+    description: `En équipe de 4, nous avions 48h pour répondre à une problématique visant à améliorer l'expérience utilisateur du site E-commerce de Manomano! Nous avons imaginés une fonctionnalité permettant à un novice en bricolage de décrire un projet via un formulaire et l'application lui propose tous les matériaux, outils et tutoriels dont il a besoin! Un beau challenge, pour un défi relevé ! Technologies utilisées: React et Sass. Résultat final adapté aux mobiles mais pas encore tout à fait adapté aux écrans de bureaux `,
   },
 ];
 
