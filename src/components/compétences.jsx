@@ -22,9 +22,9 @@ const Competences = () => {
           <h2>Compétences</h2>
           <div className="description-competences">
             <p>
-              Actuellement encore en formation, mes compétences sont en
-              constantes évolutions. Pour l'instant elles sont principalement
-              centrées sur l'environnement Javascript :
+              Mes compétences sont en constantes évolutions. Pour l'instant
+              elles sont principalement centrées sur l'environnement Javascript
+              :
             </p>
           </div>
           <div className="section-langages">

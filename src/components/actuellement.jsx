@@ -12,9 +12,7 @@ const Actuellement = () => {
           <br></br>
           <br></br>
           <p className="text-normal">
-            En formation développeur web React-js/Express-js chez<br></br>
-            <br></br>
-            <span>Wild Code School</span>
+            En recherche d'emplois de développeur web
           </p>
         </div>
       </FadeIn>
