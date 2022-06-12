@@ -21,11 +21,8 @@ const PorteFolio = () => {
     <div className="porteFolio" id="porte-folio">
       <h2>Portfolio</h2>
       <p className="descriptif-porteFolio">
-        Vous trouverez ci dessous les 2 projets réalisés pendant la formation.
-        <br></br>Je travail actuellement sur un site vitrine avec back-office,
-        qui sera bientôt publié.
-        <br></br>Vous trouverez également un travail effectué lors de
-        l'évènement Hackathon Manomano réalisé les 20 et 21 Janvier 2022.
+        Vous trouverez ci-dessous mes projets réalisés pendant et après la
+        formation.
       </p>
       <div className="slide-container">
         <Slide>
