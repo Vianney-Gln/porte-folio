@@ -38,9 +38,10 @@ const PorteFolio = () => {
         <FadeIn>
           <div className="projects">
             {projets.map((pro) => (
-              <div className="oneProject">
+              <div className="oneProject" key={pro.id}>
                 <h2 className="number-project">{pro.title}</h2>
                 <p className="description">{pro.description}</p>
+                <img className="card-image" src={pro.image} alt={pro.title} />
                 <a href={pro.lien}>Visitez le site</a>
               </div>
             ))}
