@@ -24,6 +24,7 @@
     }
 
     .each-slide {
+      display: block;
       div {
         width: 100%;
 
@@ -41,9 +42,9 @@
   .lien {
     text-align: justify;
     border: 1px solid black;
-    padding: 2px;
+    padding: 5px;
     border-radius: 5px;
-    background-color: black;
+    background-color: rgb(2, 2, 53);
     border: 1px solid white;
     display: inline-block;
 
@@ -57,6 +58,55 @@
     text-align: center;
     margin-top: 20px;
   }
+
+  .projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .oneProject {
+      border: 1px solid white;
+      position: relative;
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+
+      p.description {
+        margin-bottom: 40px;
+        overflow-y: auto;
+      }
+
+      span.date-project {
+        position: absolute;
+        font-size: 0.8rem;
+        bottom: 15px;
+      }
+      a.button-mobile {
+        color: white;
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        text-decoration: none;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 5px;
+        align-self: flex-end;
+        margin-top: 10px;
+        background-color: rgb(2, 2, 53);
+      }
+      button.button-desktop {
+        display: none;
+      }
+      .card-image {
+        display: none;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 720px) {
@@ -68,6 +118,7 @@
 
     .lien {
       transition: all 0.5s ease-in;
+      margin-left: 2px;
     }
 
     .lien:hover {
@@ -81,27 +132,151 @@
       text-align: center;
     }
     .slide-container {
+      width: 70%;
+
       .title-project {
         font-size: 24px;
+      }
+      .each-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        div {
+          width: 100%;
+        }
       }
     }
     .projects {
       width: 100%;
+      padding: 0;
+      margin: 0;
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
       margin-bottom: 40px;
       .oneProject {
-        width: 45%;
+        height: 286px;
+        position: relative;
+        width: 30%;
+        margin-left: 3%;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        cursor: pointer;
 
         h2 {
           width: 90%;
+          height: 64px;
+        }
+        a.button-mobile {
+          margin: 10px;
+          display: none;
+        }
+        button.button-desktop {
+          display: block;
+          color: white;
+          text-align: center;
+          text-decoration: none;
+          border: 1px solid white;
+          border-radius: 5px;
+          padding: 5px;
+          align-self: flex-end;
+          margin-top: 10px;
+          background-color: rgb(2, 2, 53);
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+
+        button.button-desktop:hover {
+          color: black;
+          background-color: white;
         }
 
         p {
-          text-align: justify;
-          width: 90%;
+          display: none;
+          font-size: 0.8rem;
+        }
+        .card-image {
+          display: block;
+          width: 100%;
+          background-color: white;
+          padding: 5px;
+          margin-bottom: 50px;
+        }
+        .date-project {
+          position: absolute;
+          left: 10px;
+          bottom: 15px;
+          font-size: 0.8rem;
+        }
+      }
+      .oneProject-open {
+        justify-content: flex-start;
+        position: relative;
+        h2,
+        .card-image {
+          display: none;
+        }
+        p {
+          display: block;
+          padding: 10px;
+        }
+
+        a {
+          color: white;
+          text-align: center;
+          text-decoration: none;
+          border: 1px solid white;
+          border-radius: 5px;
+          padding: 5px;
+          align-self: flex-end;
+          background-color: rgb(2, 2, 53);
+          cursor: pointer;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          font-size: 0.8rem;
+          transition: all 0.5s ease-in;
+        }
+        a:hover {
+          background-color: white;
+          color: black;
+        }
+        button.button-desktop {
+          margin: 0;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+        }
+        button.button-desktop:hover {
+          background-color: white;
+          color: black;
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .date-project {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 721px) {
+  .date-project {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1325px) {
+  .date-project {
+    display: inline;
   }
 }

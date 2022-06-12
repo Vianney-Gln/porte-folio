@@ -7,7 +7,7 @@ import FadeIn from "../animation/animation";
 const Apropos = () => {
   return (
     <div className="apropos" id="a-propos">
-      <p class="qui-suis-je">
+      <p className="qui-suis-je">
         <span>
           <a href="#contact">Contactez moi!</a>
         </span>
@@ -33,11 +33,11 @@ const Apropos = () => {
               Code School afin de professionnaliser et approfondir mes
               compétences.
               <br></br>
-              <br></br>
-              Mon objectif est d'obtenir le titre de développeur web de niveau
-              bac +2 et de poursuivre ma carrière dans le web, c'est pourquoi je
-              recherche un stage de fin d'études de 4 à 6 mois d'ici la
-              mi-Février, et par la suite un contrat.
+              <br></br>A la Wild, j'ai renforcé mes compétences en Javascript,
+              appris à utiliser React, Express et MySql. Au delà des compétences
+              techniques, j'ai également pu développer des compétences
+              transverses comme la rigueur, la détermination, le travail
+              d'équipe.
             </p>
           </div>
         </div>
