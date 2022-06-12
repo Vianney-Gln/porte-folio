@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import FadeIn from "../animation/animation";
 //node module react slideShow
 import { Slide } from "react-slideshow-image";
@@ -9,6 +9,14 @@ import "../styles/porte-folio.scss";
 import "react-slideshow-image/dist/styles.css";
 
 const PorteFolio = () => {
+  const [projet, setProjet] = useState(projets);
+
+  const handleCard = (id) => {
+    const newProjet = projet;
+    newProjet[id - 1].isOpen = !newProjet[id - 1].isOpen;
+    console.log(newProjet);
+    setProjet([...newProjet]);
+  };
   return (
     <div className="porteFolio" id="porte-folio">
       <h2>Portfolio</h2>
@@ -37,12 +45,26 @@ const PorteFolio = () => {
         </Slide>
         <FadeIn>
           <div className="projects">
-            {projets.map((pro) => (
-              <div className="oneProject" key={pro.id}>
+            {projet.map((pro) => (
+              <div
+                className={
+                  pro.isOpen ? "oneProject oneProject-open" : "oneProject"
+                }
+                key={pro.id}
+              >
                 <h2 className="number-project">{pro.title}</h2>
                 <p className="description">{pro.description}</p>
                 <img className="card-image" src={pro.image} alt={pro.title} />
-                <a href={pro.lien}>Visitez le site</a>
+                <a className="button-mobile" href={pro.lien}>
+                  Visitez le site
+                </a>
+                <button
+                  onClick={() => handleCard(pro.id)}
+                  type="button"
+                  className="button-desktop"
+                >
+                  {pro.isOpen ? "retour" : "plus d'infos"}
+                </button>
               </div>
             ))}
           </div>
