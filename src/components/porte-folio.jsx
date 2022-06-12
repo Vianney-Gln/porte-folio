@@ -41,6 +41,7 @@ const PorteFolio = () => {
               <div className="oneProject">
                 <h2 className="number-project">{pro.title}</h2>
                 <p className="description">{pro.description}</p>
+                <a href={pro.lien}>Visitez le site</a>
               </div>
             ))}
           </div>
