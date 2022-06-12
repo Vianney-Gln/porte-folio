@@ -17,6 +17,9 @@ const PorteFolio = () => {
     console.log(newProjet);
     setProjet([...newProjet]);
   };
+  window.addEventListener("resize", () => {
+    setProjet(projets);
+  });
   return (
     <div className="porteFolio" id="porte-folio">
       <h2>Portfolio</h2>
@@ -63,6 +66,9 @@ const PorteFolio = () => {
                   {pro.isOpen ? "retour" : "plus d'infos"}
                 </button>
                 {pro.isOpen && <a href={pro.lien}>Visiter le site</a>}
+                {!pro.isOpen && (
+                  <span className="date-project">du {pro.date}</span>
+                )}
               </div>
             ))}
           </div>
