@@ -16,7 +16,7 @@ const Contact = () => {
         </FadeIn>
         <FadeIn>
           <form action="https://formspree.io/f/mpzbavkb" method="post">
-            <label for="name">
+            <label htmlFor="name">
               <input
                 type="text"
                 placeholder="Votre nom"
@@ -24,7 +24,7 @@ const Contact = () => {
                 name="name"
               />
             </label>
-            <label for="firstname">
+            <label htmlFor="firstname">
               <input
                 type="text"
                 placeholder="Votre prénom"
@@ -32,7 +32,7 @@ const Contact = () => {
                 name="firstname"
               />
             </label>
-            <label for="email">
+            <label htmlFor="email">
               <input
                 type="email"
                 name="email"
@@ -41,7 +41,7 @@ const Contact = () => {
                 required
               />
             </label>
-            <label for="message">
+            <label htmlFor="message">
               <textarea
                 name="message"
                 id="message"
@@ -54,11 +54,11 @@ const Contact = () => {
         </FadeIn>
         <FadeIn>
           <p className="mail">
-            <i class="far fa-envelope"></i>
+            <i className="far fa-envelope"></i>
             <span>vgeloen@gmail.com</span>
           </p>
           <p className="github">
-            <i class="fab fa-github"></i>
+            <i className="fab fa-github"></i>
             <span>
               <a href="https://github.com/Vianney-Gln">
                 https://github.com/Vianney-Gln
@@ -66,7 +66,7 @@ const Contact = () => {
             </span>
           </p>
           <p className="linkedin">
-            <i class="fab fa-linkedin"></i>
+            <i className="fab fa-linkedin"></i>
             <span>
               <a href="https://www.linkedin.com/in/vianneygeloen/">Linkedin</a>
             </span>
