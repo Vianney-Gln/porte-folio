@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FadeIn from "../animation/animation";
 //node module react slideShow
 import { Slide } from "react-slideshow-image";

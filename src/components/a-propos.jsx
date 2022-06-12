@@ -7,7 +7,7 @@ import FadeIn from "../animation/animation";
 const Apropos = () => {
   return (
     <div className="apropos" id="a-propos">
-      <p class="qui-suis-je">
+      <p className="qui-suis-je">
         <span>
           <a href="#contact">Contactez moi!</a>
         </span>
