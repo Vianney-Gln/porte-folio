@@ -65,6 +65,7 @@ const PorteFolio = () => {
                 >
                   {pro.isOpen ? "retour" : "plus d'infos"}
                 </button>
+                {pro.isOpen && <a href={pro.lien}>Visiter le site</a>}
               </div>
             ))}
           </div>
