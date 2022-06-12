@@ -1,6 +1,7 @@
 import imagePanamWeb from "../images/panam-web.png";
 import imageFocus from "../images/focus.png";
 import imageManomano from "../images/manomano-hackathon.png";
+import imageLeBonSens from "../images/le-bon-sens.png";
 const projets = [
   {
     id: 1,
@@ -27,6 +28,14 @@ const projets = [
     isOpen: false,
     image: imageManomano,
     description: `En équipe de 4, nous avions 48h pour répondre à une problématique visant à améliorer l'expérience utilisateur du site E-commerce de Manomano! Nous avons imaginés une fonctionnalité permettant à un novice en bricolage de décrire un projet via un formulaire et l'application lui propose tous les matériaux, outils et tutoriels dont il a besoin! Un beau challenge, pour un défi relevé ! Technologies utilisées: React et Sass. Résultat final adapté aux mobiles mais pas encore tout à fait adapté aux écrans de bureaux `,
+  },
+  {
+    id: 4,
+    title: "Le Bon Sens",
+    lien: "https://le-bon-sens.netlify.app/",
+    isOpen: false,
+    image: imageLeBonSens,
+    description: `Site web créé pour le magasin de produits locaux Le Bon Sens situé vers Ancenis. C'est un projet effectué seul, relié à un back end réalisé avec Express js et MySql. Le site possède un back-office qui permet à l'admin, une fois authentifié, de modifier, créer ou supprimer la plupart des contenus. L'objectif était de mettre en avant le magasin en présentant les produits en stock, quelques recettes de cuisines, des événements et les producteurs associés au magasin.`,
   },
 ];
 
