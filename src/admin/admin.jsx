@@ -14,7 +14,9 @@ const Admin = () => {
   };
   return (
     <div className="admin">
+      <h1>Administration du portfolio</h1>
       <form>
+        <h2>Changer la photo</h2>
         <label htmlFor="file">
           <input
             type="file"
