@@ -38,10 +38,41 @@ const Admin = () => {
         {message && <p>{message}</p>}
       </form>
       <form className="form-text-intro">
-        <h2>Modifier le texte d'introduction</h2>
+        <h2>Modification du texte d'introduction ou de actuellement </h2>
         <label htmlFor="introduction">
-          <textarea name="introduction"></textarea>
+          <textarea placeholder="introduction" name="introduction"></textarea>
         </label>
+        <label htmlFor="actually">
+          <input type="text" name="actually" placeholder="actually"></input>
+        </label>
+        <button type="button">valider</button>
+      </form>
+      <form className="form-projects">
+        <h2>Gestion des projets</h2>
+        <label htmlFor="name">
+          <input type="text" name="name" placeholder="nom du projet"></input>
+        </label>
+        <label htmlFor="url">
+          <input type="text" name="url" placeholder="url du site"></input>
+        </label>
+        <label htmlFor="image-url">
+          <input
+            type="text"
+            name="image-url"
+            placeholder="url image du projet"
+          ></input>
+        </label>
+        <label htmlFor="description">
+          <input
+            type="text"
+            name="description"
+            placeholder="description du projet"
+          ></input>
+        </label>
+        <label htmlFor="date">
+          <input type="text" name="date" placeholder="dates"></input>
+        </label>
+        <button type="button">valider</button>
       </form>
     </div>
   );
