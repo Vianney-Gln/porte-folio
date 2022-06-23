@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+// Routing
+import { Route, Routes } from "react-router-dom";
+import Admin from "../admin/admin";
 import {
   Header,
   Apropos,
@@ -18,6 +21,9 @@ const App = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="App">
+      <Routes>
+        <Route exact path="admin" element={<Admin />} />
+      </Routes>
       <Background />
       <Header isOpen={isOpen} setOpen={setOpen} />
       <Heros isOpen={isOpen} setOpen={setOpen} />
