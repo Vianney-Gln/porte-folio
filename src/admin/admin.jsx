@@ -6,17 +6,22 @@ import uploadPhoto from "../service/service";
 
 const Admin = () => {
   const [file, setFile] = useState(null); // state to send file
+  const [message, setMessage] = useState("");
 
   const send = (e) => {
     const data = new FormData();
     data.append("file", file);
-    uploadPhoto(data);
+    uploadPhoto(data)
+      .then(() => {
+        setMessage("la photo est modifiée");
+      })
+      .catch(() => setMessage("photo non envoyée"));
   };
   return (
     <div className="admin">
       <h1>Administration du portfolio</h1>
       <form>
-        <h2>Changer la photo</h2>
+        <h2>Changer la photo de l'introduction</h2>
         <label htmlFor="file">
           <input
             type="file"
@@ -27,6 +32,7 @@ const Admin = () => {
         <button type="button" onClick={(e) => send(e)}>
           send
         </button>
+        {message && <p>{message}</p>}
       </form>
     </div>
   );
