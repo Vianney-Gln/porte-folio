@@ -1,23 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 // Style
 import "../styles/a-propos.scss";
-
 import FadeIn from "../animation/animation";
-// Axios
-import axios from "axios";
 
 const Apropos = () => {
-  const [file, setFile] = useState(null); // state to send file
-
-  const send = (e) => {
-    const data = new FormData();
-    data.append("file", file);
-    axios
-      .post("http://localhost:3001/api/portFolio_Vianney/upload", data)
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
-  };
-
   return (
     <div className="apropos" id="a-propos">
       <p className="qui-suis-je">
@@ -27,19 +13,6 @@ const Apropos = () => {
       </p>
       <FadeIn>
         <div className="container-avatar">
-          <form>
-            <label htmlFor="file">
-              <input
-                type="file"
-                name="image"
-                onChange={(e) => setFile(e.target.files[0])}
-              ></input>
-            </label>
-            <button type="button" onClick={(e) => send(e)}>
-              send
-            </button>
-          </form>
-
           <img
             src="http://localhost:3001/api/portFolio_Vianney/upload"
             alt="avatar-vianney"
