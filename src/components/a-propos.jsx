@@ -17,7 +17,6 @@ const Apropos = () => {
             src="http://localhost:3001/api/portFolio_Vianney/upload"
             alt="avatar-vianney"
           />
-
           <div className="texte-presentation">
             <p>
               Bonjour, je m'appelle Vianney, développeur web junior.<br></br>

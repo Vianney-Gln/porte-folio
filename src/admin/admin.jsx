@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // Style
 import "../styles/admin.scss";
-// Axios
-import axios from "axios";
+// Service function
+import uploadPhoto from "../service/service";
 
 const Admin = () => {
   const [file, setFile] = useState(null); // state to send file
@@ -10,10 +10,7 @@ const Admin = () => {
   const send = (e) => {
     const data = new FormData();
     data.append("file", file);
-    axios
-      .post("http://localhost:3001/api/portFolio_Vianney/upload", data)
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
+    uploadPhoto(data);
   };
   return (
     <div className="admin">
