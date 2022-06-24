@@ -1,20 +1,59 @@
 div.admin {
   width: 100%;
   height: 100vh;
-  background-color: white;
-  color: black;
+  background-image: url("../images/background-backOffice.jpg");
+  background-size: cover;
+  color: white;
   position: relative;
   z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    background-color: rgb(2, 2, 53);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    color: black;
+    background-color: white;
+  }
 
   h1 {
     text-align: center;
+    background-color: black;
+    width: 100%;
+    padding: 10px 0px;
   }
+  div.container-form {
+    width: 50%;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: black;
 
-  h2 {
-    color: black;
-  }
+    form.form-photo {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-  form {
-    margin-top: 20px;
+      div.change-button {
+        margin-top: 10px;
+
+        button {
+          margin-left: 10px;
+        }
+      }
+    }
+    form.form-text-intro {
+      margin-top: 20px;
+    }
+    form.form-projects {
+      margin-top: 20px;
+    }
   }
 }
