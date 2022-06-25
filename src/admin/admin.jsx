@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // Style
 import "../styles/admin.scss";
 // Service function
-import uploadPhoto, { getIntro, updateIntro } from "../service/service";
+import uploadPhoto, { updateIntro } from "../service/service";
 
 const Admin = () => {
   const [file, setFile] = useState(null); // state to send file
@@ -28,15 +28,6 @@ const Admin = () => {
       })
       .catch(() => setMessagePhoto("photo non envoyée"));
   };
-
-  // On component Mounting get infos introduction and actually
-  useEffect(() => {
-    getIntro()
-      .then((result) => {
-        setIntro(result);
-      })
-      .catch((err) => console.log(err));
-  }, []);
 
   /**
    * Function getting input data
