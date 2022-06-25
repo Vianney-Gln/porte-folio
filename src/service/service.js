@@ -21,4 +21,13 @@ export const getIntro = () => {
     .then((result) => result.data);
 };
 
+/**
+ * Function updating introduction
+ * @param {object} data
+ * @returns {promise}
+ */
+export const updateIntro = (data) => {
+  return axios.put(`${baseUrl}/api/portFolio_Vianney/introduction`, data);
+};
+
 export default uploadPhoto;

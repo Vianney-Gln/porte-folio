@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // Style
 import "../styles/admin.scss";
 // Service function
-import uploadPhoto, { getIntro } from "../service/service";
+import uploadPhoto, { getIntro, updateIntro } from "../service/service";
 
 const Admin = () => {
   const [file, setFile] = useState(null); // state to send file
@@ -47,6 +47,24 @@ const Admin = () => {
     const newDataIntro = intro;
     newDataIntro[key] = value;
     setIntro(newDataIntro);
+  };
+
+  /**
+   * Function running service function updateIntro
+   */
+  const runUpdateIntro = () => {
+    updateIntro(intro)
+      .then(() => {
+        setMessageIntro("modification réussie");
+      })
+      .then(() => {
+        setTimeout(() => {
+          window.location.reload();
+        }, 4000);
+      })
+      .catch(() => {
+        setMessageIntro("erreur lors de la modification");
+      });
   };
 
   return (
@@ -102,7 +120,9 @@ const Admin = () => {
               }
             ></input>
           </label>
-          <button type="button">valider</button>
+          <button type="button" onClick={runUpdateIntro}>
+            valider
+          </button>
           <p className="message">{messageIntro ? messageIntro : ""}</p>
         </form>
         <form className="form-projects">
