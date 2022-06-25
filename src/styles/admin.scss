@@ -1,6 +1,5 @@
 div.admin {
   width: 100%;
-  height: 100vh;
   background-image: url("../images/background-backOffice.jpg");
   background-size: cover;
   color: white;
@@ -9,6 +8,14 @@ div.admin {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  p.message {
+    height: 20px;
+  }
+  span {
+    margin: 0;
+    font-size: 0.8rem;
+  }
 
   button {
     background-color: rgb(2, 2, 53);
@@ -40,6 +47,21 @@ div.admin {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: relative;
+
+      div.container-avatar {
+        width: 80px;
+        height: 80px;
+        border: 1px solid white;
+        position: absolute;
+        top: 0;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        img {
+          width: 100%;
+        }
+      }
 
       div.change-button {
         margin-top: 10px;
@@ -51,9 +73,51 @@ div.admin {
     }
     form.form-text-intro {
       margin-top: 20px;
+      border-top: 1px solid white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 480px;
+      h2 {
+        margin-top: 20px;
+      }
+      label {
+        width: 50%;
+        textarea,
+        input {
+          width: 100%;
+          padding: 5px;
+        }
+        textarea {
+          height: 200px;
+        }
+      }
     }
     form.form-projects {
       margin-top: 20px;
+      border-top: 1px solid white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 780px;
+
+      h2 {
+        margin-top: 20px;
+      }
+      label {
+        width: 50%;
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 5px;
+        }
+        textarea {
+          height: 400px;
+        }
+      }
     }
   }
 }
