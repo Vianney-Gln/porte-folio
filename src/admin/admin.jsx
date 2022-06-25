@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // Style
 import "../styles/admin.scss";
 // Service function
 import uploadPhoto, { updateIntro } from "../service/service";
+// Context
+import ContextInfos from "../context/ContextInfos";
 
 const Admin = () => {
   const [file, setFile] = useState(null); // state to send file
   const [messagePhoto, setMessagePhoto] = useState(""); // state manage messages
   const [messageIntro, setMessageIntro] = useState(""); // state manage messages
   const [messageProject, setMessageProject] = useState(""); // state manage messages
-  const [intro, setIntro] = useState({}); // state getting actually and introduction as object
+
+  // Context
+  const contextInfos = useContext(ContextInfos);
+  const { actually, introduction } = contextInfos.infoIntro;
+
   /**
    * Function running the service uploadPhoto function
    * @param {event} e
@@ -35,16 +41,16 @@ const Admin = () => {
    * @param {string} key
    */
   const getInputDataIntro = (value, key) => {
-    const newDataIntro = intro;
+    const newDataIntro = contextInfos.infoIntro;
     newDataIntro[key] = value;
-    setIntro(newDataIntro);
+    contextInfos.setInfoIntro(newDataIntro);
   };
 
   /**
    * Function running service function updateIntro
    */
   const runUpdateIntro = () => {
-    updateIntro(intro)
+    updateIntro(contextInfos.infoIntro)
       .then(() => {
         setMessageIntro("modification réussie");
       })
@@ -93,7 +99,7 @@ const Admin = () => {
             <textarea
               placeholder="introduction"
               name="introduction"
-              defaultValue={intro.introduction ? intro.introduction : ""}
+              defaultValue={introduction ? introduction : ""}
               onChange={(event) =>
                 getInputDataIntro(event.target.value, "introduction")
               }
@@ -105,7 +111,7 @@ const Admin = () => {
               type="text"
               name="actually"
               placeholder="actually"
-              defaultValue={intro.actually ? intro.actually : ""}
+              defaultValue={actually ? actually : ""}
               onChange={(event) =>
                 getInputDataIntro(event.target.value, "actually")
               }
