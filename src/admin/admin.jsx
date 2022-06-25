@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Style
 import "../styles/admin.scss";
 // Service function
-import uploadPhoto from "../service/service";
+import uploadPhoto, { getIntro } from "../service/service";
 
 const Admin = () => {
   const [file, setFile] = useState(null); // state to send file
   const [messagePhoto, setMessagePhoto] = useState(""); // state manage messages
   const [messageIntro, setMessageIntro] = useState(""); // state manage messages
   const [messageProject, setMessageProject] = useState(""); // state manage messages
+  const [intro, setIntro] = useState({}); // state getting actually and introduction as object
   /**
    * Function running the service uploadPhoto function
    * @param {event} e
    */
-  const send = (e) => {
+  const sendPhoto = (e) => {
     const data = new FormData();
     data.append("file", file);
     uploadPhoto(data)
@@ -27,11 +28,33 @@ const Admin = () => {
       })
       .catch(() => setMessagePhoto("photo non envoyée"));
   };
+
+  // On component Mounting get infos introduction and actually
+  useEffect(() => {
+    getIntro()
+      .then((result) => {
+        setIntro(result);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  /**
+   * Function getting input data
+   * @param {string} value
+   * @param {string} key
+   */
+  const getInputDataIntro = (value, key) => {
+    const newDataIntro = intro;
+    newDataIntro[key] = value;
+    setIntro(newDataIntro);
+  };
+
   return (
     <div className="admin">
       <h1>Administration du portfolio</h1>
       <div className="container-form">
         <form className="form-photo">
+          {/* Part upload photo */}
           <div className="container-avatar">
             <img
               src="http://localhost:3001/api/portFolio_Vianney/upload"
@@ -47,26 +70,43 @@ const Admin = () => {
                 onChange={(e) => setFile(e.target.files[0])}
               ></input>
             </label>
-            <button type="button" onClick={(e) => send(e)}>
+            <button type="button" onClick={(e) => sendPhoto(e)}>
               changer la photo
             </button>
           </div>
           <p className="message">{messagePhoto ? messagePhoto : ""}</p>
         </form>
         <form className="form-text-intro">
+          {/* Part Introduction */}
           <h2>Modification du texte d'introduction ou de actuellement</h2>
           <label htmlFor="introduction">
             <span>Texte d'introduction: </span>
-            <textarea placeholder="introduction" name="introduction"></textarea>
+            <textarea
+              placeholder="introduction"
+              name="introduction"
+              defaultValue={intro.introduction ? intro.introduction : ""}
+              onChange={(event) =>
+                getInputDataIntro(event.target.value, "introduction")
+              }
+            ></textarea>
           </label>
           <label htmlFor="actually">
             <span>Actuellement: </span>
-            <input type="text" name="actually" placeholder="actually"></input>
+            <input
+              type="text"
+              name="actually"
+              placeholder="actually"
+              defaultValue={intro.actually ? intro.actually : ""}
+              onChange={(event) =>
+                getInputDataIntro(event.target.value, "actually")
+              }
+            ></input>
           </label>
           <button type="button">valider</button>
           <p className="message">{messageIntro ? messageIntro : ""}</p>
         </form>
         <form className="form-projects">
+          {/* Part projects */}
           <h2>Gestion des projets</h2>
           <label htmlFor="name">
             <span>Nom du projet: </span>
