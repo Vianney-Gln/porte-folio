@@ -46,7 +46,11 @@ const Admin = () => {
     newDataIntro[key] = value;
     contextInfos.setInfoIntro(newDataIntro);
   };
-
+  /**
+   * Function getting input data
+   * @param {string} value
+   * @param {string} key
+   */
   const getDataInputProjects = (value, key) => {
     const newDataProject = contextInfos.projects;
     newDataProject[key] = value;

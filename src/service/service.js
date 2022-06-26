@@ -40,4 +40,13 @@ export const getProjects = () => {
     .then((result) => result.data);
 };
 
+/**
+ *
+ * @param {object} data
+ * @returns {promise}
+ */
+export const createProject = (data) => {
+  return axios.post(`${baseUrl}/api/portFolio_Vianney/projects`, data);
+};
+
 export default uploadPhoto;
