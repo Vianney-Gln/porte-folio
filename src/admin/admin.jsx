@@ -8,6 +8,7 @@ import ContextInfos from "../context/ContextInfos";
 
 const Admin = () => {
   const [file, setFile] = useState(null); // state to send file
+  const [fileImageProject, setFileImageProject] = useState(null);
   const [messagePhoto, setMessagePhoto] = useState(""); // state manage messages
   const [messageIntro, setMessageIntro] = useState(""); // state manage messages
   const [messageProject, setMessageProject] = useState(""); // state manage messages
@@ -20,9 +21,9 @@ const Admin = () => {
    * Function running the service uploadPhoto function
    * @param {event} e
    */
-  const sendPhoto = (e) => {
+  const sendPhoto = (e, photo) => {
     const data = new FormData();
-    data.append("file", file);
+    data.append("file", photo);
     uploadPhoto(data)
       .then(() => {
         setMessagePhoto("la photo est modifiée");
@@ -44,6 +45,12 @@ const Admin = () => {
     const newDataIntro = contextInfos.infoIntro;
     newDataIntro[key] = value;
     contextInfos.setInfoIntro(newDataIntro);
+  };
+
+  const getDataInputProjects = (value, key) => {
+    const newDataProject = contextInfos.projects;
+    newDataProject[key] = value;
+    contextInfos.setProject(newDataProject);
   };
 
   /**
@@ -78,14 +85,14 @@ const Admin = () => {
           </div>
           <h2>Changer la photo de l'introduction</h2>
           <div className="change-button">
-            <label htmlFor="file">
+            <label htmlFor="image">
               <input
                 type="file"
                 name="image"
                 onChange={(e) => setFile(e.target.files[0])}
               ></input>
             </label>
-            <button type="button" onClick={(e) => sendPhoto(e)}>
+            <button type="button" onClick={(e) => sendPhoto(e, file)}>
               changer la photo
             </button>
           </div>
@@ -124,37 +131,70 @@ const Admin = () => {
         </form>
         <form className="form-projects">
           {/* Part projects */}
-          <h2>Gestion des projets</h2>
+          <h2>Nouveaux projets</h2>
           <label htmlFor="name">
             <span>Nom du projet: </span>
-            <input type="text" name="name" placeholder="nom du projet"></input>
+            <input
+              type="text"
+              name="name"
+              placeholder="nom du projet"
+              onChange={(e) => getDataInputProjects(e.target.value, "name")}
+            ></input>
           </label>
           <label htmlFor="url">
             <span>lien vers le site: </span>
-            <input type="text" name="url" placeholder="url du site"></input>
-          </label>
-          <label htmlFor="image-url">
-            <span>image url du projet </span>
             <input
               type="text"
-              name="image-url"
-              placeholder="url image du projet"
+              name="url"
+              placeholder="url du site"
+              onChange={(e) => getDataInputProjects(e.target.value, "url")}
+            ></input>
+          </label>
+          <label htmlFor="image-project">
+            <span>upload image du projet </span>
+            <input
+              type="file"
+              name="image-project"
+              onChange={(e) => setFileImageProject(e.target.files[0])}
             ></input>
           </label>
           <label htmlFor="date">
             <span>Périodes: </span>
-            <input type="text" name="date" placeholder="dates"></input>
+            <input
+              type="text"
+              name="date"
+              placeholder="dates"
+              onChange={(e) => getDataInputProjects(e.target.value, "date")}
+            ></input>
           </label>
           <label htmlFor="description">
             <span>Description du projet </span>
             <textarea
               name="description"
               placeholder="description du projet"
+              onChange={(e) =>
+                getDataInputProjects(e.target.value, "description")
+              }
             ></textarea>
           </label>
           <button type="button">valider</button>
           <p className="message">{messageProject ? messageProject : ""}</p>
         </form>
+        <h2>Gestion des projets</h2>
+        <div className="manage-projects">
+          <div className="container-projects">
+            <ul className="list-projects">
+              {contextInfos.projects.length &&
+                contextInfos.projects.map((project) => {
+                  return (
+                    <li>
+                      <h2>{project.name}</h2>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

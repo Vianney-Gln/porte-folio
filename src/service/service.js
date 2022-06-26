@@ -30,4 +30,14 @@ export const updateIntro = (data) => {
   return axios.put(`${baseUrl}/api/portFolio_Vianney/introduction`, data);
 };
 
+/**
+ * Function getting projects
+ * @returns {promise}
+ */
+export const getProjects = () => {
+  return axios
+    .get(`${baseUrl}/api/portFolio_Vianney/projects`)
+    .then((result) => result.data);
+};
+
 export default uploadPhoto;
