@@ -41,7 +41,7 @@ export const getProjects = () => {
 };
 
 /**
- *
+ * Function creting a project
  * @param {object} data
  * @returns {promise}
  */
