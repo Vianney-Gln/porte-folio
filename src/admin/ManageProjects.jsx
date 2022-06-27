@@ -1,10 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 // Context
 import ContextInfos from "../context/ContextInfos";
+// Services
+import { deleteProjectById } from "../service/service";
 
 const ManageProjects = () => {
   // Context
   const contextInfos = useContext(ContextInfos);
+
+  // States
+  const [deleteProjectMessage, setDeleteProjectMessage] = useState("");
+
+  const runDeleteProject = (id) => {
+    deleteProjectById(id)
+      .then(() => {
+        setDeleteProjectMessage("Le projet a bien été supprimé");
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      })
+      .catch(() => {
+        setDeleteProjectMessage(
+          "Il y a eu une erreur lors de la suppression du projet"
+        );
+      });
+  };
   return (
     <>
       <h2 className="title-manage-project">Gestion des projets</h2>
@@ -22,7 +42,12 @@ const ManageProjects = () => {
                           alt={project.name}
                         />
                         <div className="buttons">
-                          <button type="button">Supprimer</button>
+                          <button
+                            type="button"
+                            onClick={() => runDeleteProject(project.id)}
+                          >
+                            Supprimer
+                          </button>
                           <button type="button">Modifier</button>
                         </div>
                       </li>
@@ -37,6 +62,9 @@ const ManageProjects = () => {
           )}
         </div>
       </div>
+      <p className="message">
+        {deleteProjectMessage ? deleteProjectMessage : ""}
+      </p>
     </>
   );
 };
