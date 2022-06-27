@@ -29,11 +29,11 @@ const Admin = () => {
       .then(() => {
         setMessagePhoto("la photo est modifiée");
       })
-      // .then(() => {
-      //   setTimeout(() => {
-      //     window.location.reload();
-      //   }, 3000);
-      // })
+      .then(() => {
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      })
       .catch(() => {
         setMessagePhoto("photo non envoyée");
       });
