@@ -137,7 +137,7 @@ div.admin {
         margin-top: 10px;
         list-style: none;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         row-gap: 10px;
         column-gap: 10px;
 
@@ -148,7 +148,7 @@ div.admin {
           flex-direction: column;
           align-items: center;
           img {
-            width: 80%;
+            width: 100%;
           }
           button {
             margin: 10px 0px;
