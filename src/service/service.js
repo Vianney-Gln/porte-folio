@@ -53,4 +53,16 @@ export const createProject = (dataForm) => {
   });
 };
 
+/**
+ * Function deleting one project by id
+ * @param {number} id
+ * @returns {promise}
+ */
+export const deleteProjectById = (id) => {
+  return axios({
+    method: "delete",
+    url: `${baseUrl}/api/portFolio_Vianney/projects/${id}`,
+  });
+};
+
 export default uploadPhoto;
