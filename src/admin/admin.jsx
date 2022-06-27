@@ -34,7 +34,9 @@ const Admin = () => {
       //     window.location.reload();
       //   }, 3000);
       // })
-      .catch(() => setMessagePhoto("photo non envoyée"));
+      .catch(() => {
+        setMessagePhoto("photo non envoyée");
+      });
   };
 
   /**
