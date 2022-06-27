@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 // Style
 import "../styles/admin.scss";
 // Service function
-import uploadPhoto, { updateIntro } from "../service/service";
+import uploadPhoto, { updateIntro, createProject } from "../service/service";
 // Context
 import ContextInfos from "../context/ContextInfos";
 
@@ -12,6 +12,7 @@ const Admin = () => {
   const [messagePhoto, setMessagePhoto] = useState(""); // state manage messages
   const [messageIntro, setMessageIntro] = useState(""); // state manage messages
   const [messageProject, setMessageProject] = useState(""); // state manage messages
+  const [dataProject, setDataProject] = useState({});
 
   // Context
   const contextInfos = useContext(ContextInfos);
@@ -28,11 +29,11 @@ const Admin = () => {
       .then(() => {
         setMessagePhoto("la photo est modifiée");
       })
-      .then(() => {
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
-      })
+      // .then(() => {
+      //   setTimeout(() => {
+      //     window.location.reload();
+      //   }, 3000);
+      // })
       .catch(() => setMessagePhoto("photo non envoyée"));
   };
 
@@ -52,9 +53,9 @@ const Admin = () => {
    * @param {string} key
    */
   const getDataInputProjects = (value, key) => {
-    const newDataProject = contextInfos.projects;
+    const newDataProject = dataProject;
     newDataProject[key] = value;
-    contextInfos.setProject(newDataProject);
+    setDataProject(newDataProject);
   };
 
   /**
@@ -72,6 +73,27 @@ const Admin = () => {
       })
       .catch(() => {
         setMessageIntro("erreur lors de la modification");
+      });
+  };
+
+  const runCreateProject = () => {
+    const dataForm = new FormData();
+    dataProject.name && dataForm.append("name", dataProject.name);
+    dataProject.url && dataForm.append("url", dataProject.url);
+    dataProject.date && dataForm.append("date", dataProject.date);
+    dataProject.description &&
+      dataForm.append("description", dataProject.description);
+    dataForm.append("image-project", fileImageProject);
+    createProject(dataForm)
+      .then(() => {
+        setMessageProject("projet créé");
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      })
+      .catch((err) => {
+        console.log(err);
+        setMessageProject("erreur lors de la création du projet");
       });
   };
 
@@ -181,21 +203,24 @@ const Admin = () => {
               }
             ></textarea>
           </label>
-          <button type="button">valider</button>
+          <button type="button" onClick={() => runCreateProject()}>
+            valider
+          </button>
           <p className="message">{messageProject ? messageProject : ""}</p>
         </form>
         <h2>Gestion des projets</h2>
         <div className="manage-projects">
           <div className="container-projects">
             <ul className="list-projects">
-              {contextInfos.projects.length &&
-                contextInfos.projects.map((project) => {
-                  return (
-                    <li>
-                      <h2>{project.name}</h2>
-                    </li>
-                  );
-                })}
+              {contextInfos.projects.length
+                ? contextInfos.projects.map((project) => {
+                    return (
+                      <li key={project.id}>
+                        <h2>{project.name}</h2>
+                      </li>
+                    );
+                  })
+                : ""}
             </ul>
           </div>
         </div>
