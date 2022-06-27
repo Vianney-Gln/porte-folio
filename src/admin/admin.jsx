@@ -2,32 +2,20 @@ import React, { useState, useContext } from "react";
 // Style
 import "../styles/admin.scss";
 // Service function
-import { updateIntro, createProject } from "../service/service";
+import { createProject } from "../service/service";
 // Context
 import ContextInfos from "../context/ContextInfos";
 //Components
 import FormPhoto from "./FormPhoto";
+import FormTextIntro from "./FormTextIntro";
 
 const Admin = () => {
   const [fileImageProject, setFileImageProject] = useState(null);
-  const [messageIntro, setMessageIntro] = useState(""); // state manage messages
   const [messageProject, setMessageProject] = useState(""); // state manage messages
   const [dataProject, setDataProject] = useState({});
-
   // Context
   const contextInfos = useContext(ContextInfos);
-  const { actually, introduction } = contextInfos.infoIntro;
 
-  /**
-   * Function getting input data
-   * @param {string} value
-   * @param {string} key
-   */
-  const getInputDataIntro = (value, key) => {
-    const newDataIntro = contextInfos.infoIntro;
-    newDataIntro[key] = value;
-    contextInfos.setInfoIntro(newDataIntro);
-  };
   /**
    * Function getting input data
    * @param {string} value
@@ -37,24 +25,6 @@ const Admin = () => {
     const newDataProject = dataProject;
     newDataProject[key] = value;
     setDataProject(newDataProject);
-  };
-
-  /**
-   * Function running service function updateIntro
-   */
-  const runUpdateIntro = () => {
-    updateIntro(contextInfos.infoIntro)
-      .then(() => {
-        setMessageIntro("modification réussie");
-      })
-      .then(() => {
-        setTimeout(() => {
-          window.location.reload();
-        }, 4000);
-      })
-      .catch(() => {
-        setMessageIntro("erreur lors de la modification");
-      });
   };
 
   const runCreateProject = () => {
@@ -83,37 +53,7 @@ const Admin = () => {
       <h1>Administration du portfolio</h1>
       <div className="container-form">
         <FormPhoto />
-        <form className="form-text-intro">
-          {/* Part Introduction */}
-          <h2>Modification du texte d'introduction ou de actuellement</h2>
-          <label htmlFor="introduction">
-            <span>Texte d'introduction: </span>
-            <textarea
-              placeholder="introduction"
-              name="introduction"
-              defaultValue={introduction ? introduction : ""}
-              onChange={(event) =>
-                getInputDataIntro(event.target.value, "introduction")
-              }
-            ></textarea>
-          </label>
-          <label htmlFor="actually">
-            <span>Actuellement: </span>
-            <input
-              type="text"
-              name="actually"
-              placeholder="actually"
-              defaultValue={actually ? actually : ""}
-              onChange={(event) =>
-                getInputDataIntro(event.target.value, "actually")
-              }
-            ></input>
-          </label>
-          <button type="button" onClick={runUpdateIntro}>
-            valider
-          </button>
-          <p className="message">{messageIntro ? messageIntro : ""}</p>
-        </form>
+        <FormTextIntro />
         <form className="form-projects">
           {/* Part projects */}
           <h2>Nouveaux projets</h2>
