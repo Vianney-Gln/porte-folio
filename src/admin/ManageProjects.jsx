@@ -21,7 +21,10 @@ const ManageProjects = () => {
                           src={`http://localhost:3001/api/portFolio_Vianney/projects/image/${project.id}`}
                           alt={project.name}
                         />
-                        <button type="button">Supprimer</button>
+                        <div className="buttons">
+                          <button type="button">Supprimer</button>
+                          <button type="button">Modifier</button>
+                        </div>
                       </li>
                     );
                   })
