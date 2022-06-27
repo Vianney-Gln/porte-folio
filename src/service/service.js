@@ -8,7 +8,6 @@ const baseUrl = "http://localhost:3001";
  * @returns {promise}
  */
 const uploadPhoto = (data) => {
-  console.log(data);
   return axios.post(`${baseUrl}/api/portFolio_Vianney/upload`, data);
 };
 
@@ -47,7 +46,6 @@ export const getProjects = () => {
  * @returns {promise}
  */
 export const createProject = (dataForm) => {
-  console.log(dataForm);
   return axios({
     method: "post",
     data: dataForm,
