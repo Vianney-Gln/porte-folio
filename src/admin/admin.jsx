@@ -25,18 +25,27 @@ const Admin = () => {
   };
 
   // States
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false); // state managing the open or close modal
+  const [idProject, setIdProject] = useState(null); // state getting the id of the selected project
+
   return (
     <div className="admin">
       {modalOpen && (
-        <Modal modalStyle={modalStyleDelete} setModalOpen={setModalOpen} />
+        <Modal
+          idProject={idProject}
+          modalStyle={modalStyleDelete}
+          setModalOpen={setModalOpen}
+        />
       )}
       <h1>Administration du portfolio</h1>
       <div className="container-form">
         <FormPhoto />
         <FormTextIntro />
         <FormCreateProjects />
-        <ManageProjects />
+        <ManageProjects
+          setIdProject={setIdProject}
+          setModalOpen={setModalOpen}
+        />
       </div>
     </div>
   );
