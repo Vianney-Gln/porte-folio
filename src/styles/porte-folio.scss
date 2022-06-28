@@ -70,6 +70,7 @@
 
     .oneProject {
       border: 1px solid white;
+      width: 100%;
       position: relative;
       margin-top: 15px;
       padding: 10px;
@@ -211,6 +212,8 @@
         .card-image {
           display: block;
           width: 100%;
+          height: 151px;
+          object-fit: cover;
           background-color: white;
           padding: 5px;
           margin-bottom: 50px;

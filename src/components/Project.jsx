@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 
 const Project = ({ project }) => {
-  const [projectOpen, setProjectOpen] = useState(false);
+  // States
+  const [projectOpen, setProjectOpen] = useState(false); // State managin the display of a project
+
+  // Function closing a card project to escape bugs css on resize
+  window.addEventListener("resize", () => {
+    setProjectOpen(false);
+  });
+
   return (
     <div className={projectOpen ? "oneProject oneProject-open" : "oneProject"}>
       <h2 className="number-project">{project.name}</h2>
