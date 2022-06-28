@@ -8,6 +8,9 @@ const Modal = ({ modalStyle }) => {
       <div className="container-modal"></div>
       <div style={modalStyle} className="modal">
         <div className="modal-delete">
+          <button className="button-exit" type="button">
+            X
+          </button>
           <p>Etes vous sûr de vouloir supprimer ce projet?</p>
           <div className="yes-no-buttons">
             <button type="button">oui</button>
