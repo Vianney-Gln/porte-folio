@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-// Style
-import "../styles/modal.scss";
 // Services
 import { deleteProjectById } from "../service/service";
 
-const Modal = ({ modalStyle, setModalOpen, idProject }) => {
+const DeleteModal = ({ modalStyle, setModalOpen, idProject }) => {
+  //States
   const [deleteProjectMessage, setDeleteProjectMessage] = useState(""); // state managing delete project message
-
   /**
    * Function deleting a project by calling service deleteProject and manage message error. Reload if success
    *
@@ -26,18 +24,19 @@ const Modal = ({ modalStyle, setModalOpen, idProject }) => {
       });
   };
   return (
-    <>
-      <div className="container-modal"></div>
-      <div style={modalStyle} className="modal">
-        <div className="modal-delete">
-          <button
-            onClick={() => setModalOpen(false)}
-            className="button-exit"
-            type="button"
-          >
-            X
-          </button>
+    <div style={modalStyle} className="modal">
+      <div className="modal-delete">
+        <button
+          onClick={() => setModalOpen(false)}
+          className="button-exit"
+          type="button"
+        >
+          X
+        </button>
+        {!deleteProjectMessage && (
           <p>Etes vous sûr de vouloir supprimer ce projet?</p>
+        )}
+        {!deleteProjectMessage && (
           <div className="yes-no-buttons">
             <button
               onClick={() => {
@@ -51,13 +50,13 @@ const Modal = ({ modalStyle, setModalOpen, idProject }) => {
               non
             </button>
           </div>
-          <p className="message">
-            {deleteProjectMessage ? deleteProjectMessage : ""}
-          </p>
-        </div>
+        )}
+        <p className="message">
+          {deleteProjectMessage ? deleteProjectMessage : ""}
+        </p>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Modal;
+export default DeleteModal;

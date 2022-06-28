@@ -7,7 +7,7 @@ import FormPhoto from "./FormPhoto";
 import FormTextIntro from "./FormTextIntro";
 import FormCreateProjects from "./FormCreateProjects";
 import ManageProjects from "./ManageProjects";
-import Modal from "./Modal";
+import Modal from "../modals/Modal";
 
 const Admin = () => {
   // Styles modal
