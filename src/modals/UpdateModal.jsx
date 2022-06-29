@@ -12,7 +12,7 @@ const UpdateModal = ({ modalStyle, setModalOpen, toUpdate, idProject }) => {
         >
           X
         </button>
-        <FormUpdateProjects />
+        <FormUpdateProjects toUpdate={toUpdate} idProjectToUpdate={idProject} />
       </div>
     </div>
   );

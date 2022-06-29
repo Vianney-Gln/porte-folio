@@ -65,4 +65,27 @@ export const deleteProjectById = (id) => {
   });
 };
 
+/**
+ * Function getting one project by id
+ * @param {number} id
+ * @returns {promise}
+ */
+export const getProjectById = (id) => {
+  return axios
+    .get(`${baseUrl}/api/portFolio_Vianney/projects/${id}`)
+    .then((result) => result.data);
+};
+
+/**
+ * Function updating one project by his id
+ * @param {object} data
+ * @param {number} id
+ * @returns
+ */
+export const updateProjectById = (data, id) => {
+  return axios
+    .put(`${baseUrl}/api/portFolio_Vianney/projects/${id}`, data)
+    .then((result) => result.data);
+};
+
 export default uploadPhoto;

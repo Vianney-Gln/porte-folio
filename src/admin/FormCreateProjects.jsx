@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Service function
-import { createProject } from "../service/service";
+import {
+  createProject,
+  getProjectById,
+  updateProjectById,
+} from "../service/service";
 
-const FormCreateProjects = () => {
+const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
   // States
   const [fileImageProject, setFileImageProject] = useState(null); // state manage images projects
   const [messageProject, setMessageProject] = useState(""); // state manage messages
   const [dataProject, setDataProject] = useState({}); //state manage data projects
+
+  // UseEffect / on mountin and if state toUpdate = true, get project and store it in the dataProject state
+  useEffect(() => {
+    if (toUpdate) {
+      getProjectById(idProjectToUpdate).then((result) => {
+        setDataProject(result);
+      });
+    }
+  });
 
   /**
    * Function getting input data
@@ -17,6 +30,7 @@ const FormCreateProjects = () => {
     const newDataProject = dataProject;
     newDataProject[key] = value;
     setDataProject(newDataProject);
+    console.log(newDataProject);
   };
 
   /**
@@ -30,7 +44,7 @@ const FormCreateProjects = () => {
     dataProject.date && dataForm.append("date", dataProject.date);
     dataProject.description &&
       dataForm.append("description", dataProject.description);
-    dataForm.append("image-project", fileImageProject);
+    fileImageProject && dataForm.append("image-project", fileImageProject);
     return dataForm;
   };
 
@@ -51,16 +65,34 @@ const FormCreateProjects = () => {
         setMessageProject("erreur lors de la création du projet");
       });
   };
+
+  const runUpdateProject = () => {
+    const dataForm = createFormData();
+    updateProjectById(dataForm, idProjectToUpdate)
+      .then((result) => {
+        console.log(result);
+        setMessageProject("projet modifié");
+
+        // setTimeout(() => {
+        //   window.location.reload();
+        // }, 3000);
+      })
+      .catch((err) => {
+        console.log(err);
+        setMessageProject("erreur lors de la modification du projet");
+      });
+  };
   return (
     <form className="form-projects">
       {/* Part projects */}
-      <h2>Nouveaux projets</h2>
+      <h2>{!toUpdate ? "Nouveaux projets" : "modifier un projet"}</h2>
       <label htmlFor="name">
         <span>Nom du projet: </span>
         <input
           type="text"
           name="name"
           placeholder="nom du projet"
+          defaultValue={toUpdate ? dataProject.name : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "name")}
         ></input>
       </label>
@@ -70,6 +102,7 @@ const FormCreateProjects = () => {
           type="text"
           name="url"
           placeholder="url du site"
+          defaultValue={toUpdate ? dataProject.url : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "url")}
         ></input>
       </label>
@@ -87,6 +120,7 @@ const FormCreateProjects = () => {
           type="text"
           name="date"
           placeholder="dates"
+          defaultValue={toUpdate ? dataProject.date : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "date")}
         ></input>
       </label>
@@ -95,10 +129,16 @@ const FormCreateProjects = () => {
         <textarea
           name="description"
           placeholder="description du projet"
+          defaultValue={toUpdate ? dataProject.description : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "description")}
         ></textarea>
       </label>
-      <button type="button" onClick={() => runCreateProject()}>
+      <button
+        type="button"
+        onClick={() => {
+          !toUpdate ? runCreateProject() : runUpdateProject();
+        }}
+      >
         valider
       </button>
       <p className="message">{messageProject ? messageProject : ""}</p>
