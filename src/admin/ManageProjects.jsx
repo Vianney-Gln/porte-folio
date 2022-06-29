@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 // Context
 import ContextInfos from "../context/ContextInfos";
 
-const ManageProjects = ({ setModalOpen, setIdProject }) => {
+const ManageProjects = ({ setToUpdate, setModalOpen, setIdProject }) => {
   // Context
   const contextInfos = useContext(ContextInfos);
 
@@ -26,13 +26,23 @@ const ManageProjects = ({ setModalOpen, setIdProject }) => {
                           <button
                             type="button"
                             onClick={() => {
+                              setToUpdate(false);
                               setModalOpen(true);
                               setIdProject(project.id);
                             }}
                           >
                             Supprimer
                           </button>
-                          <button type="button">Modifier</button>
+                          <button
+                            onClick={() => {
+                              setModalOpen(true);
+                              setIdProject(project.id);
+                              setToUpdate(true);
+                            }}
+                            type="button"
+                          >
+                            Modifier
+                          </button>
                         </div>
                       </li>
                     );
