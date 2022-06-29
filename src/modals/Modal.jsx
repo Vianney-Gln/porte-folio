@@ -1,7 +1,7 @@
 import React from "react";
-import FormCreateProjects from "../admin/FormCreateProjects";
 // Style
 import "../styles/modal.scss";
+
 // Components
 import DeleteModal from "./DeleteModal";
 import UpdateModal from "./UpdateModal";

@@ -1,4 +1,5 @@
 import React from "react";
+import FormUpdateProjects from "../admin/FormCreateProjects";
 
 const UpdateModal = ({ modalStyle, setModalOpen, toUpdate, idProject }) => {
   return (
@@ -11,6 +12,7 @@ const UpdateModal = ({ modalStyle, setModalOpen, toUpdate, idProject }) => {
         >
           X
         </button>
+        <FormUpdateProjects />
       </div>
     </div>
   );
