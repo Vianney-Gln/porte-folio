@@ -19,7 +19,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
         setDataProject(result);
       });
     }
-  });
+  }, []);
 
   /**
    * Function getting input data
@@ -72,10 +72,9 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
       .then((result) => {
         console.log(result);
         setMessageProject("projet modifié");
-
-        // setTimeout(() => {
-        //   window.location.reload();
-        // }, 3000);
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
       })
       .catch((err) => {
         console.log(err);
@@ -114,6 +113,18 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
           onChange={(e) => setFileImageProject(e.target.files[0])}
         ></input>
       </label>
+      {toUpdate && (
+        <div className="container-image-preview">
+          <img
+            className="image-preview"
+            src={`http://localhost:3001/api/portFolio_Vianney/projects/image/${idProjectToUpdate}`}
+            alt="img-preview"
+          />
+          <button className="delete-button" type="button">
+            Supprimer l'image
+          </button>
+        </div>
+      )}
       <label htmlFor="date">
         <span>Périodes: </span>
         <input
