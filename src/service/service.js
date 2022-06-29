@@ -88,4 +88,10 @@ export const updateProjectById = (data, id) => {
     .then((result) => result.data);
 };
 
+export const deleteImageProjectById = (id) => {
+  return axios
+    .delete(`${baseUrl}/api/portFolio_Vianney/project/deleteImage/${id}`)
+    .then((result) => result.data);
+};
+
 export default uploadPhoto;

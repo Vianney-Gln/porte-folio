@@ -4,6 +4,7 @@ import {
   createProject,
   getProjectById,
   updateProjectById,
+  deleteImageProjectById,
 } from "../service/service";
 
 const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
@@ -66,6 +67,9 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
       });
   };
 
+  /**
+   * Function running service function updateProject, manage success or error messages and reload if request is success
+   */
   const runUpdateProject = () => {
     const dataForm = createFormData();
     updateProjectById(dataForm, idProjectToUpdate)
@@ -79,6 +83,18 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
       .catch((err) => {
         console.log(err);
         setMessageProject("erreur lors de la modification du projet");
+      });
+  };
+
+  const runDeleteImageProjectById = () => {
+    deleteImageProjectById(idProjectToUpdate)
+      .then(() => {
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
   return (
@@ -120,7 +136,11 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
             src={`http://localhost:3001/api/portFolio_Vianney/projects/image/${idProjectToUpdate}`}
             alt="img-preview"
           />
-          <button className="delete-button" type="button">
+          <button
+            className="delete-button"
+            type="button"
+            onClick={runDeleteImageProjectById}
+          >
             Supprimer l'image
           </button>
         </div>
