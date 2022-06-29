@@ -19,7 +19,11 @@ const FormCreateProjects = () => {
     setDataProject(newDataProject);
   };
 
-  const runCreateProject = () => {
+  /**
+   * Function creting a formData
+   * @returns {object} dataForm
+   */
+  const createFormData = () => {
     const dataForm = new FormData();
     dataProject.name && dataForm.append("name", dataProject.name);
     dataProject.url && dataForm.append("url", dataProject.url);
@@ -27,6 +31,14 @@ const FormCreateProjects = () => {
     dataProject.description &&
       dataForm.append("description", dataProject.description);
     dataForm.append("image-project", fileImageProject);
+    return dataForm;
+  };
+
+  /**
+   * Function running service function createProject, manage success or error messages and reload if request is success
+   */
+  const runCreateProject = () => {
+    const dataForm = createFormData();
     createProject(dataForm)
       .then(() => {
         setMessageProject("projet créé");
