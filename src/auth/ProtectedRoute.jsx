@@ -12,8 +12,7 @@ const ProtectedRoute = () => {
 
   useEffect(() => {
     setLoad(false);
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZnZWxvZW5AZ21haWwuY29tIiwidXVpZCI6IjN2N29qMzg5MzhsNTB4cWR4ayIsImlhdCI6MTY1NjY3MTM0Mn0.-79UczDjb8NXkIhY84v8b36XTRHEcsQZUwd5b5dpdFg";
+    const token = localStorage.getItem("token_access_portfolio");
     verifyToken(token)
       .then((result) => {
         setResultToken(result.data);

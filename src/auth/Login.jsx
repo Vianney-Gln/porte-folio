@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-
 // Style
 import "../styles/login.scss";
+// Router
+import { useNavigate } from "react-router-dom";
+// Service
+import { authentificate } from "../service/auth";
 
 const Login = () => {
+  // Navigate
+  const navigate = useNavigate();
   // States
   const [creds, setCreds] = useState({});
+  const [message, setMessage] = useState("");
   /**
    * Function getting credentials from inputs
    * @param {String} value
@@ -20,25 +26,22 @@ const Login = () => {
    * Function running authentificate from service, store the token in the localstorage and redirect to /admin
    * @param {Event} e
    */
-  //   const runAuthentificate = (e) => {
-  //     e.preventDefault();
-  //     authentificate(creds)
-  //       .then((result) => {
-  //         setMessage("");
-  //         setError(false);
-  //         localStorage.setItem("token_access_le_bon_sens", result);
-  //         navigate("/admin");
-  //       })
-  //       .catch(() => {
-  //         setMessage("mot de passe ou email incorrect");
-  //         setError(true);
-  //       });
-  //   };
+  const runAuthentificate = (e) => {
+    e.preventDefault();
+    authentificate(creds)
+      .then((result) => {
+        localStorage.setItem("token_access_portfolio", result);
+        navigate("/admin");
+      })
+      .catch(() => {
+        setMessage("mot de passe ou email incorrect");
+      });
+  };
 
   return (
     <div className="container-login">
       <h1>Se connecter</h1>
-      <form onSubmit={"runAuthentificate"}>
+      <form onSubmit={(e) => runAuthentificate(e)}>
         <label htmlFor="email">
           <span>Votre adresse mail:</span>
           <input
@@ -61,6 +64,7 @@ const Login = () => {
         </label>
         <button type="submit">valider</button>
       </form>
+      <p>{message && message}</p>
     </div>
   );
 };

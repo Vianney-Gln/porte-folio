@@ -7,7 +7,6 @@ const baseUrl = "http://localhost:3001";
  * @returns {promise} boolean
  */
 const verifyToken = (token) => {
-  console.log(token);
   return axios({
     url: `${baseUrl}/api/portFolio_Vianney/verifyToken`,
     method: "post",
@@ -25,7 +24,7 @@ export const authentificate = (creds) => {
     method: "post",
     url: `${baseUrl}/api/portFolio_Vianney/auth`,
     data: creds,
-  });
+  }).then((result) => result.data);
 };
 
 export default verifyToken;
