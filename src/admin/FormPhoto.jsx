@@ -45,7 +45,7 @@ const FormPhoto = () => {
             onChange={(e) => setFile(e.target.files[0])}
           ></input>
         </label>
-        <button type="button" onClick={(e) => sendPhoto(e, file)}>
+        <button type="button" onClick={() => sendPhoto(file)}>
           changer la photo
         </button>
       </div>
