@@ -15,7 +15,7 @@ const Project = ({ project }) => {
       <p className="description">{project.description}</p>
       <img
         className="card-image"
-        src={`http://localhost:3001/api/portFolio_Vianney/projects/image/${project.id}`}
+        src={`https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/projects/image/${project.id}`}
         alt={project.name}
       />
       <a className="button-mobile" href={project.url}>

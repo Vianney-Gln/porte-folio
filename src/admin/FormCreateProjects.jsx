@@ -138,7 +138,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
         <div className="container-image-preview">
           <img
             className="image-preview"
-            src={`http://localhost:3001/api/portFolio_Vianney/projects/image/${idProjectToUpdate}`}
+            src={`https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/projects/image/${idProjectToUpdate}`}
             alt="img-preview"
           />
           <button

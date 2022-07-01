@@ -19,7 +19,7 @@ const Apropos = () => {
       <FadeIn>
         <div className="container-avatar">
           <img
-            src="http://localhost:3001/api/portFolio_Vianney/upload"
+            src="https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/upload"
             alt="avatar-vianney"
           />
           <div className="texte-presentation">

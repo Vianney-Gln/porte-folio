@@ -32,7 +32,7 @@ const FormPhoto = () => {
       {/* Part upload photo */}
       <div className="container-avatar">
         <img
-          src="http://localhost:3001/api/portFolio_Vianney/upload"
+          src="https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/upload"
           alt="avatar"
         />
       </div>

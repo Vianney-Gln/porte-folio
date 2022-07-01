@@ -31,7 +31,7 @@ const PorteFolio = () => {
                   </span>
                   <div>
                     <img
-                      src={`http://localhost:3001/api/portFolio_Vianney/projects/image/${project.id}`}
+                      src={`https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/projects/image/${project.id}`}
                       alt={project.name}
                     />
                     <span className="lien">
