@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // Style
 import "../styles/admin.scss";
+// Routing
+import { useNavigate } from "react-router-dom";
 
 //Components
 import FormPhoto from "./FormPhoto";
@@ -10,6 +12,15 @@ import ManageProjects from "./ManageProjects";
 import Modal from "../modals/Modal";
 
 const Admin = () => {
+  // Navigate
+  const navigate = useNavigate();
+
+  // Function deconnecting user from admin
+  const deconnexion = () => {
+    localStorage.removeItem("token_access_portfolio");
+    navigate("/");
+  };
+
   // Styles modal
   const modalStyleDelete = {
     width: "35vw",
@@ -55,7 +66,7 @@ const Admin = () => {
       )}
       <h1>
         Administration du portfolio{" "}
-        <button class="deconnexion" type="button">
+        <button onClick={deconnexion} class="deconnexion" type="button">
           Se déconnecter
         </button>
       </h1>
