@@ -14,6 +14,11 @@ div.admin {
     font-size: 0.8rem;
   }
 
+  button.deconnexion {
+    position: absolute;
+    top: 30%;
+    right: 50px;
+  }
   button {
     background-color: rgb(2, 2, 53);
     padding: 5px;
@@ -31,6 +36,7 @@ div.admin {
     background-color: black;
     width: 100%;
     padding: 10px 0px;
+    position: relative;
   }
   div.container-form {
     width: 50%;

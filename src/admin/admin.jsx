@@ -53,7 +53,12 @@ const Admin = () => {
           toUpdate={toUpdate}
         />
       )}
-      <h1>Administration du portfolio</h1>
+      <h1>
+        Administration du portfolio{" "}
+        <button class="deconnexion" type="button">
+          Se déconnecter
+        </button>
+      </h1>
       <div className="container-form">
         <FormPhoto />
         <FormTextIntro />
