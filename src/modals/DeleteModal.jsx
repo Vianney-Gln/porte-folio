@@ -10,7 +10,8 @@ const DeleteModal = ({ modalStyle, setModalOpen, idProject }) => {
    *
    */
   const runDeleteProject = () => {
-    deleteProjectById(idProject)
+    const token = localStorage.getItem("token_access_portfolio");
+    deleteProjectById(idProject, `Bearer ${token}`)
       .then(() => {
         setDeleteProjectMessage("Le projet a bien été supprimé");
         setTimeout(() => {

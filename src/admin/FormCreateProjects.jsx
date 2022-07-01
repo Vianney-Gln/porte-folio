@@ -54,7 +54,8 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
    */
   const runCreateProject = () => {
     const dataForm = createFormData();
-    createProject(dataForm)
+    const token = localStorage.getItem("token_access_portfolio");
+    createProject(dataForm, `Bearer ${token}`)
       .then(() => {
         setMessageProject("projet créé");
         setTimeout(() => {
@@ -72,7 +73,8 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
    */
   const runUpdateProject = () => {
     const dataForm = createFormData();
-    updateProjectById(dataForm, idProjectToUpdate)
+    const token = localStorage.getItem("token_access_portfolio");
+    updateProjectById(dataForm, idProjectToUpdate, `Bearer ${token}`)
       .then((result) => {
         console.log(result);
         setMessageProject("projet modifié");
@@ -85,9 +87,12 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
         setMessageProject("erreur lors de la modification du projet");
       });
   };
-
+  /**
+   * Function running the service function deleteImageProjectById
+   */
   const runDeleteImageProjectById = () => {
-    deleteImageProjectById(idProjectToUpdate)
+    const token = localStorage.getItem("token_access_portfolio");
+    deleteImageProjectById(idProjectToUpdate, `Bearer ${token}`)
       .then(() => {
         setTimeout(() => {
           window.location.reload();
