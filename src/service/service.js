@@ -5,10 +5,16 @@ const baseUrl = "http://localhost:3001";
 /**
  * Function uploading and changing the photo
  * @param {object} data
+ * @param {string} token
  * @returns {promise}
  */
-const uploadPhoto = (data) => {
-  return axios.post(`${baseUrl}/api/portFolio_Vianney/upload`, data);
+const uploadPhoto = (data, token) => {
+  return axios({
+    url: `${baseUrl}/api/portFolio_Vianney/upload`,
+    data: data,
+    method: "post",
+    headers: { authorization: token },
+  });
 };
 
 /**
@@ -24,10 +30,16 @@ export const getIntro = () => {
 /**
  * Function updating introduction
  * @param {object} data
+ * @param {string} token
  * @returns {promise}
  */
-export const updateIntro = (data) => {
-  return axios.put(`${baseUrl}/api/portFolio_Vianney/introduction`, data);
+export const updateIntro = (data, token) => {
+  return axios({
+    method: "put",
+    url: `${baseUrl}/api/portFolio_Vianney/introduction`,
+    data: data,
+    headers: { authorization: token },
+  });
 };
 
 /**

@@ -26,7 +26,8 @@ const FormTextIntro = () => {
    * Function running service function updateIntro
    */
   const runUpdateIntro = () => {
-    updateIntro(contextInfos.infoIntro)
+    const token = localStorage.getItem("token_access_portfolio");
+    updateIntro(contextInfos.infoIntro, `Bearer ${token}`)
       .then(() => {
         setMessageIntro("modification réussie");
       })
