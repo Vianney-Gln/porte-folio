@@ -8,12 +8,13 @@ const FormPhoto = () => {
 
   /**
    * Function running the service uploadPhoto function
-   * @param {event} e
+   * @param {object} photo
    */
-  const sendPhoto = (e, photo) => {
+  const sendPhoto = (photo) => {
+    const token = localStorage.getItem("token_access_portfolio");
     const data = new FormData();
     data.append("file", photo);
-    uploadPhoto(data)
+    uploadPhoto(data, `Bearer ${token}`)
       .then(() => {
         setMessagePhoto("la photo est modifiée");
       })
@@ -44,7 +45,7 @@ const FormPhoto = () => {
             onChange={(e) => setFile(e.target.files[0])}
           ></input>
         </label>
-        <button type="button" onClick={(e) => sendPhoto(e, file)}>
+        <button type="button" onClick={() => sendPhoto(file)}>
           changer la photo
         </button>
       </div>

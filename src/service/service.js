@@ -5,10 +5,16 @@ const baseUrl = "http://localhost:3001";
 /**
  * Function uploading and changing the photo
  * @param {object} data
+ * @param {string} token
  * @returns {promise}
  */
-const uploadPhoto = (data) => {
-  return axios.post(`${baseUrl}/api/portFolio_Vianney/upload`, data);
+const uploadPhoto = (data, token) => {
+  return axios({
+    url: `${baseUrl}/api/portFolio_Vianney/upload`,
+    data: data,
+    method: "post",
+    headers: { authorization: token },
+  });
 };
 
 /**
@@ -24,10 +30,16 @@ export const getIntro = () => {
 /**
  * Function updating introduction
  * @param {object} data
+ * @param {string} token
  * @returns {promise}
  */
-export const updateIntro = (data) => {
-  return axios.put(`${baseUrl}/api/portFolio_Vianney/introduction`, data);
+export const updateIntro = (data, token) => {
+  return axios({
+    method: "put",
+    url: `${baseUrl}/api/portFolio_Vianney/introduction`,
+    data: data,
+    headers: { authorization: token },
+  });
 };
 
 /**
@@ -43,25 +55,29 @@ export const getProjects = () => {
 /**
  * Function creting a project
  * @param {object} data
+ * @param {string} token
  * @returns {promise}
  */
-export const createProject = (dataForm) => {
+export const createProject = (dataForm, token) => {
   return axios({
     method: "post",
     data: dataForm,
     url: `${baseUrl}/api/portFolio_Vianney/projects`,
+    headers: { authorization: token },
   });
 };
 
 /**
  * Function deleting one project by id
  * @param {number} id
+ * @param {string} token
  * @returns {promise}
  */
-export const deleteProjectById = (id) => {
+export const deleteProjectById = (id, token) => {
   return axios({
     method: "delete",
     url: `${baseUrl}/api/portFolio_Vianney/projects/${id}`,
+    headers: { authorization: token },
   });
 };
 
@@ -80,17 +96,29 @@ export const getProjectById = (id) => {
  * Function updating one project by his id
  * @param {object} data
  * @param {number} id
- * @returns
+ * @param {string} token
+ * @returns {promise}
  */
-export const updateProjectById = (data, id) => {
-  return axios
-    .put(`${baseUrl}/api/portFolio_Vianney/projects/${id}`, data)
-    .then((result) => result.data);
+export const updateProjectById = (data, id, token) => {
+  return axios({
+    method: "put",
+    url: `${baseUrl}/api/portFolio_Vianney/projects/${id}`,
+    data: data,
+    headers: { authorization: token },
+  }).then((result) => result.data);
 };
 
-export const deleteImageProjectById = (id) => {
+/**
+ * Function deleting the image from one project
+ * @param {number} id
+ * @param {string} token
+ * @returns {promise}
+ */
+export const deleteImageProjectById = (id, token) => {
   return axios
-    .delete(`${baseUrl}/api/portFolio_Vianney/project/deleteImage/${id}`)
+    .delete(`${baseUrl}/api/portFolio_Vianney/project/deleteImage/${id}`, {
+      headers: { authorization: token },
+    })
     .then((result) => result.data);
 };
 
