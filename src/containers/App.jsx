@@ -1,32 +1,22 @@
-import React, { useState } from "react";
-import {
-  Header,
-  Apropos,
-  Heros,
-  Actuellement,
-  PorteFolio,
-  Contact,
-  Competences,
-  Footer,
-} from "../components";
-import Background from "../components/background";
+import React from "react";
+// Routing
+import { Route, Routes } from "react-router-dom";
+// Components
+import ContainerApp from "./containerApp";
+import Login from "../auth/Login";
+import ProtectedRoute from "../auth/ProtectedRoute";
 
 //style
 import "../styles/App.scss";
 
 const App = () => {
-  const [isOpen, setOpen] = useState(false);
   return (
     <div className="App">
-      <Background />
-      <Header isOpen={isOpen} setOpen={setOpen} />
-      <Heros isOpen={isOpen} setOpen={setOpen} />
-      <Apropos />
-      <Actuellement />
-      <Competences />
-      <PorteFolio />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/admin" element={<ProtectedRoute />} />
+        <Route exact path="/" element={<ContainerApp />} />
+      </Routes>
     </div>
   );
 };

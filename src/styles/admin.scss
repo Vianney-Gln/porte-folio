@@ -1,0 +1,186 @@
+div.admin {
+  width: 100%;
+  background-image: url("../images/background-backOffice.jpg");
+  background-size: cover;
+  color: white;
+  position: relative;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  button.deconnexion {
+    position: absolute;
+    top: 30%;
+    right: 50px;
+  }
+  button {
+    background-color: rgb(2, 2, 53);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    color: black;
+    background-color: white;
+  }
+
+  h1 {
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    padding: 10px 0px;
+    position: relative;
+  }
+  div.container-form {
+    width: 50%;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: black;
+
+    form.form-photo {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      div.container-avatar {
+        width: 80px;
+        height: 80px;
+        border: 1px solid white;
+        position: absolute;
+        top: 0;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        img {
+          width: 100%;
+        }
+      }
+
+      div.change-button {
+        margin-top: 10px;
+
+        button {
+          margin-left: 10px;
+        }
+      }
+    }
+    form.form-text-intro {
+      margin-top: 20px;
+      border-top: 1px solid white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 480px;
+      h2 {
+        margin-top: 20px;
+      }
+      label {
+        width: 50%;
+        textarea,
+        input {
+          width: 100%;
+          padding: 5px;
+        }
+        textarea {
+          height: 200px;
+        }
+      }
+    }
+    form.form-projects {
+      margin-top: 20px;
+      border-top: 1px solid white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 780px;
+      border-bottom: 1px solid white;
+
+      h2 {
+        margin-top: 20px;
+      }
+      label {
+        width: 50%;
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 5px;
+        }
+        textarea {
+          height: 400px;
+        }
+      }
+    }
+  }
+
+  h2.title-manage-project {
+    text-align: center;
+    margin-top: 20px;
+  }
+  div.manage-projects {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    div.container-projects {
+      width: 80%;
+
+      ul.list-projects {
+        width: 100%;
+        margin-top: 10px;
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 10px;
+
+        li {
+          border: 1px solid white;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+          }
+          button {
+            margin: 10px 0px;
+          }
+          h3 {
+            margin: 5px 0px;
+          }
+          div.buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+          }
+        }
+      }
+      p.no-projects {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  p.message {
+    margin: 10px 0px;
+    padding: 10px;
+    text-align: center;
+  }
+}
