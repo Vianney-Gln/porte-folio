@@ -20,7 +20,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
         setDataProject(result);
       });
     }
-  }, []);
+  });
 
   /**
    * Function getting input data
