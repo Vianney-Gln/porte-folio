@@ -19,7 +19,7 @@ const ManageProjects = ({ setToUpdate, setModalOpen, setIdProject }) => {
                       <li key={project.id}>
                         <h3>{project.name}</h3>
                         <img
-                          src={`http://localhost:3001/api/portFolio_Vianney/projects/image/${project.id}`}
+                          src={`https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/projects/image/${project.id}`}
                           alt={project.name}
                         />
                         <div className="buttons">
