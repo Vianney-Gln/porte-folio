@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "../images/monitor-pixabay.jpg";
+import backgroundImage from "../images/monitorpixabay.jpg";
 //style
 import "../styles/background.scss";
 
