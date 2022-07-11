@@ -20,7 +20,8 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
         setDataProject(result);
       });
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /**
    * Function getting input data
