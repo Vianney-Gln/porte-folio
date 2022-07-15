@@ -28,14 +28,11 @@ const FormPhoto = () => {
       var reader = new FileReader();
       reader.onload = function (readerEvt) {
         var binaryString = readerEvt.target.result;
-
         document.getElementById("photoToUpload").src =
           "data:image/png;base64," + btoa(binaryString);
-        console.log(btoa(binaryString).length);
-        console.log(photo);
         const image64 = { type: photo.type, base64: btoa(binaryString) };
 
-        uploadPhoto(image64, token)
+        uploadPhoto(image64, `bearer ${token}`)
           .then(() => setMessagePhoto("photo modifiée"))
           .catch(() => setMessagePhoto("photo non envoyée"));
       };
