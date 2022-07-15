@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Services
-import uploadPhoto from "../service/service";
+import uploadPhoto, { getAvatar } from "../service/service";
 
 const FormPhoto = () => {
   const [messagePhoto, setMessagePhoto] = useState(""); // state manage messages
   const [file, setFile] = useState(null); // state to send file
+  const [avatar, setAvatar] = useState({}); // state getting avatar
+
+  // Function getting avatar on component mounting
+  useEffect(() => {
+    getAvatar()
+      .then((result) => {
+        setAvatar(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   /**
    * Function running the service uploadPhoto function
@@ -38,7 +50,7 @@ const FormPhoto = () => {
       <div className="container-avatar">
         <img
           id="photoToUpload"
-          //src="https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/upload"
+          src={`data:${avatar.type};base64,${avatar.base64}`}
           alt="avatar"
         />
       </div>

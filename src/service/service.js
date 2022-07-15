@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://portfolio-vianney.herokuapp.com";
+const baseUrl = "http://localhost:3001";
 
 /**
  * Function uploading and changing the photo
@@ -15,6 +15,15 @@ const uploadPhoto = (data, token) => {
     method: "post",
     headers: { authorization: token },
   });
+};
+
+/**
+ * Function getting type and base64 avatar
+ */
+export const getAvatar = () => {
+  return axios
+    .get(`${baseUrl}/api/portFolio_Vianney/upload`)
+    .then((result) => result.data);
 };
 
 /**
