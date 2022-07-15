@@ -12,27 +12,33 @@ const FormPhoto = () => {
    */
   const sendPhoto = (photo) => {
     const token = localStorage.getItem("token_access_portfolio");
-    const data = new FormData();
-    data.append("file", photo);
-    uploadPhoto(data, `Bearer ${token}`)
-      .then(() => {
-        setMessagePhoto("la photo est modifiée");
-      })
-      .then(() => {
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
-      })
-      .catch(() => {
-        setMessagePhoto("photo non envoyée");
-      });
+    if (photo) {
+      var reader = new FileReader();
+      reader.onload = function (readerEvt) {
+        var binaryString = readerEvt.target.result;
+
+        document.getElementById("photoToUpload").src =
+          "data:image/png;base64," + btoa(binaryString);
+        console.log(btoa(binaryString).length);
+        console.log(photo);
+        const image64 = { type: photo.type, base64: btoa(binaryString) };
+
+        uploadPhoto(image64, token)
+          .then(() => setMessagePhoto("photo modifiée"))
+          .catch(() => setMessagePhoto("photo non envoyée"));
+      };
+
+      reader.readAsBinaryString(photo);
+    }
+    setMessagePhoto("la photo est modifiée");
   };
   return (
     <form className="form-photo">
       {/* Part upload photo */}
       <div className="container-avatar">
         <img
-          src="https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/upload"
+          id="photoToUpload"
+          //src="https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/upload"
           alt="avatar"
         />
       </div>
