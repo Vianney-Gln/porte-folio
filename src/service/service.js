@@ -67,10 +67,11 @@ export const getProjects = () => {
  * @param {string} token
  * @returns {promise}
  */
-export const createProject = (dataForm, token) => {
+export const createProject = (data, token) => {
+  console.log(data);
   return axios({
     method: "post",
-    data: dataForm,
+    data: data,
     url: `${baseUrl}/api/portFolio_Vianney/projects`,
     headers: { authorization: token },
   });
