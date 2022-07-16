@@ -81,13 +81,12 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
       var reader = new FileReader();
       reader.onload = function (readerEvt) {
         var binaryString = readerEvt.target.result;
-
         const data = {
           type: fileImageProject.type,
           base64: btoa(binaryString),
           ...dataProject,
         };
-        console.log(data);
+
         updateProjectById(data, idProjectToUpdate, `Bearer ${token}`)
           .then(() => {
             setMessageProject("projet modifié");
