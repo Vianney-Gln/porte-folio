@@ -26,6 +26,12 @@ export const getAvatar = () => {
     .then((result) => result.data);
 };
 
+export const getImageProjectById = (id) => {
+  return axios
+    .get(`${baseUrl}/api/portFolio_Vianney/project/image/${id}`)
+    .then((result) => result.data);
+};
+
 /**
  * Function getting introduction and actually
  * @returns {promise}

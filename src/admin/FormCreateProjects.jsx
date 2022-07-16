@@ -7,7 +7,7 @@ import {
   deleteImageProjectById,
 } from "../service/service";
 
-const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
+const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
   // States
   const [fileImageProject, setFileImageProject] = useState(null); // state manage images projects
   const [messageProject, setMessageProject] = useState(""); // state manage messages
@@ -18,6 +18,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
     if (toUpdate) {
       getProjectById(idProjectToUpdate).then((result) => {
         setDataProject(result);
+        console.log(result);
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -76,20 +77,38 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
    * Function running service function updateProject, manage success or error messages and reload if request is success
    */
   const runUpdateProject = () => {
-    //   const dataForm = createFormData();
-    //   const token = localStorage.getItem("token_access_portfolio");
-    //   updateProjectById(dataForm, idProjectToUpdate, `Bearer ${token}`)
-    //     .then((result) => {
-    //       console.log(result);
-    //       setMessageProject("projet modifié");
-    //       setTimeout(() => {
-    //         window.location.reload();
-    //       }, 3000);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       setMessageProject("erreur lors de la modification du projet");
-    //     });
+    const token = localStorage.getItem("token_access_portfolio");
+    if (fileImageProject) {
+      var reader = new FileReader();
+      reader.onload = function (readerEvt) {
+        var binaryString = readerEvt.target.result;
+
+        const data = {
+          type: fileImageProject.type,
+          base64: btoa(binaryString),
+          ...dataProject,
+        };
+        console.log(data);
+        updateProjectById(data, idProjectToUpdate, `Bearer ${token}`)
+          .then(() => {
+            setMessageProject("projet modifié");
+          })
+          .catch((err) => {
+            console.log(err);
+            setMessageProject("erreur lors de la modification du projet");
+          });
+      };
+      reader.readAsBinaryString(fileImageProject);
+    } else {
+      updateProjectById(dataProject, idProjectToUpdate, `Bearer ${token}`)
+        .then(() => {
+          setMessageProject("projet modifié");
+        })
+        .catch((err) => {
+          console.log(err);
+          setMessageProject("erreur lors de la modification du projet");
+        });
+    }
   };
   /**
    * Function running the service function deleteImageProjectById
@@ -143,7 +162,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
           <img
             id="imageProjectToUpload"
             className="image-preview"
-            //src={`https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/projects/image/${idProjectToUpdate}`}
+            src={`data:${image64.type};base64,${image64.base64}`}
             alt="img-preview"
           />
           <button
