@@ -18,6 +18,21 @@ const uploadPhoto = (data, token) => {
 };
 
 /**
+ * Function getting type and base64 avatar
+ */
+export const getAvatar = () => {
+  return axios
+    .get(`${baseUrl}/api/portFolio_Vianney/upload`)
+    .then((result) => result.data);
+};
+
+export const getImageProjectById = (id) => {
+  return axios
+    .get(`${baseUrl}/api/portFolio_Vianney/project/image/${id}`)
+    .then((result) => result.data);
+};
+
+/**
  * Function getting introduction and actually
  * @returns {promise}
  */
@@ -58,10 +73,11 @@ export const getProjects = () => {
  * @param {string} token
  * @returns {promise}
  */
-export const createProject = (dataForm, token) => {
+export const createProject = (data, token) => {
+  console.log(data);
   return axios({
     method: "post",
-    data: dataForm,
+    data: data,
     url: `${baseUrl}/api/portFolio_Vianney/projects`,
     headers: { authorization: token },
   });

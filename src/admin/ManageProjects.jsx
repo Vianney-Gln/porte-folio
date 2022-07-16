@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext } from "react";
 // Context
 import ContextInfos from "../context/ContextInfos";
@@ -19,7 +20,7 @@ const ManageProjects = ({ setToUpdate, setModalOpen, setIdProject }) => {
                       <li key={project.id}>
                         <h3>{project.name}</h3>
                         <img
-                          src={`https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/projects/image/${project.id}`}
+                          src={`data:${project.type};base64,${project.base64}`}
                           alt={project.name}
                         />
                         <div className="buttons">

@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Services
-import uploadPhoto from "../service/service";
+import uploadPhoto, { getAvatar } from "../service/service";
 
 const FormPhoto = () => {
   const [messagePhoto, setMessagePhoto] = useState(""); // state manage messages
   const [file, setFile] = useState(null); // state to send file
+  const [avatar, setAvatar] = useState({}); // state getting avatar
+
+  // Function getting avatar on component mounting
+  useEffect(() => {
+    getAvatar()
+      .then((result) => {
+        setAvatar(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   /**
    * Function running the service uploadPhoto function
@@ -12,27 +24,30 @@ const FormPhoto = () => {
    */
   const sendPhoto = (photo) => {
     const token = localStorage.getItem("token_access_portfolio");
-    const data = new FormData();
-    data.append("file", photo);
-    uploadPhoto(data, `Bearer ${token}`)
-      .then(() => {
-        setMessagePhoto("la photo est modifiée");
-      })
-      .then(() => {
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
-      })
-      .catch(() => {
-        setMessagePhoto("photo non envoyée");
-      });
+    if (photo) {
+      var reader = new FileReader();
+      reader.onload = function (readerEvt) {
+        var binaryString = readerEvt.target.result;
+        document.getElementById("photoToUpload").src =
+          "data:image/png;base64," + btoa(binaryString);
+        const image64 = { type: photo.type, base64: btoa(binaryString) };
+
+        uploadPhoto(image64, `bearer ${token}`)
+          .then(() => setMessagePhoto("photo modifiée"))
+          .catch(() => setMessagePhoto("photo non envoyée"));
+      };
+
+      reader.readAsBinaryString(photo);
+    }
+    setMessagePhoto("la photo est modifiée");
   };
   return (
     <form className="form-photo">
       {/* Part upload photo */}
       <div className="container-avatar">
         <img
-          src="https://portfolio-vianney.herokuapp.com/api/portFolio_Vianney/upload"
+          id="photoToUpload"
+          src={`data:${avatar.type};base64,${avatar.base64}`}
           alt="avatar"
         />
       </div>
