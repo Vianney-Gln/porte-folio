@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = "https://portfolio-vianney.herokuapp.com";
 /**
  * Function verifying if a user is authentificated
  * @param {*} token
