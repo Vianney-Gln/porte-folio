@@ -18,7 +18,6 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
     if (toUpdate) {
       getProjectById(idProjectToUpdate).then((result) => {
         setDataProject(result);
-        console.log(result);
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
