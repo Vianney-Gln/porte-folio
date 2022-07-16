@@ -76,6 +76,7 @@ const Admin = () => {
         <FormCreateProjects />
         <ManageProjects
           setIdProject={setIdProject}
+          idProject={idProject}
           setModalOpen={setModalOpen}
           setToUpdate={setToUpdate}
         />
