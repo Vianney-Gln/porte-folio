@@ -6,6 +6,7 @@ const ContextInfos = createContext(null);
 export const ContextInfosProvider = ({ children }) => {
   const [infoIntro, setInfoIntro] = useState({}); // state managing infos intro and actually
   const [projects, setProjects] = useState([]); // state managing projects
+  const [isUpdate, setIsUpdate] = useState(false);
 
   // On Mounting, get all infos from introduction and projects
   useEffect(() => {
@@ -17,11 +18,18 @@ export const ContextInfosProvider = ({ children }) => {
         setProjects(result);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [isUpdate]);
 
   return (
     <ContextInfos.Provider
-      value={{ infoIntro, setInfoIntro, projects, setProjects }}
+      value={{
+        infoIntro,
+        setInfoIntro,
+        projects,
+        setProjects,
+        isUpdate,
+        setIsUpdate,
+      }}
     >
       {children}
     </ContextInfos.Provider>

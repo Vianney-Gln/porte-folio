@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 // Service function
 import {
   createProject,
@@ -6,22 +6,26 @@ import {
   updateProjectById,
   deleteImageProjectById,
 } from "../service/service";
+// context
+import ContextInfos from "../context/ContextInfos";
 
-const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
+const FormCreateProjects = ({ idProjectToUpdate, toUpdate, setModalOpen }) => {
   // States
   const [messageProject, setMessageProject] = useState(""); // state manage messages
-  const [dataProject, setDataProject] = useState({}); //state manage data projects
+  const [dataProject, setDataProject] = useState({}); // state manage data projects
+
+  //context
+  const contextInfos = useContext(ContextInfos);
 
   // UseEffect / on mountin and if state toUpdate = true, get project and store it in the dataProject state
   useEffect(() => {
     if (toUpdate) {
       getProjectById(idProjectToUpdate).then((result) => {
         setDataProject(result);
-        console.log(result);
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [contextInfos.isUpdate]);
 
   /**
    * Function getting input data
@@ -57,6 +61,10 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
     updateProjectById(dataProject, idProjectToUpdate, `Bearer ${token}`)
       .then(() => {
         setMessageProject("projet modifié");
+        contextInfos.setIsUpdate(!contextInfos.isUpdate);
+        setTimeout(() => {
+          setModalOpen(false);
+        }, 4000);
       })
       .catch((err) => {
         console.log(err);
@@ -115,9 +123,9 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
       {toUpdate && (
         <div className="container-image-preview">
           <img
-            id="imageProjectToUpload"
+            id="imageProject"
             className="image-preview"
-            src={dataProject.urlimage ? dataProject.urlimage : ""}
+            src={dataProject.urlimage}
             alt="img-preview"
           />
           <button
