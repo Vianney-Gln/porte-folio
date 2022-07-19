@@ -30,10 +30,7 @@ const PorteFolio = () => {
                     {project.name.toUpperCase()}
                   </span>
                   <div>
-                    <img
-                      src={`data:${project.type};base64,${project.base64}`}
-                      alt={project.name}
-                    />
+                    <img src={project.urlimage} alt={project.name} />
                     <span className="lien">
                       <a href={project.url}>Visitez le site</a>
                     </span>

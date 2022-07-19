@@ -13,11 +13,7 @@ const Project = ({ project }) => {
     <div className={projectOpen ? "oneProject oneProject-open" : "oneProject"}>
       <h2 className="number-project">{project.name}</h2>
       <p className="description">{project.description}</p>
-      <img
-        className="card-image"
-        src={`data:${project.type};base64,${project.base64}`}
-        alt={project.name}
-      />
+      <img className="card-image" src={project.urlimage} alt={project.name} />
       <a className="button-mobile" href={project.url}>
         Visitez le site
       </a>
