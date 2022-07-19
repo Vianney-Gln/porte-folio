@@ -46,6 +46,16 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, setModalOpen }) => {
     createProject(dataProject, `Bearer ${token}`)
       .then(() => {
         setMessageProject("projet créé");
+        setTimeout(() => {
+          setMessageProject("");
+          contextInfos.setIsCreate(!contextInfos.isCreate);
+          setDataProject({});
+          document.getElementById("name").value = "";
+          document.getElementById("url").value = "";
+          document.getElementById("image-project").value = "";
+          document.getElementById("date").value = "";
+          document.getElementById("description").value = "";
+        }, 4000);
       })
       .catch((err) => {
         console.log(err);
@@ -95,6 +105,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, setModalOpen }) => {
         <input
           type="text"
           name="name"
+          id="name"
           placeholder="nom du projet"
           defaultValue={toUpdate ? dataProject.name : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "name")}
@@ -105,6 +116,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, setModalOpen }) => {
         <input
           type="text"
           name="url"
+          id="url"
           placeholder="url du site"
           defaultValue={toUpdate ? dataProject.url : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "url")}
@@ -115,6 +127,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, setModalOpen }) => {
         <input
           type="text"
           name="image-project"
+          id="image-project"
           placeholder="url de l'image"
           defaultValue={toUpdate ? dataProject.urlimage : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "urlImage")}
@@ -142,6 +155,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, setModalOpen }) => {
         <input
           type="text"
           name="date"
+          id="date"
           placeholder="dates"
           defaultValue={toUpdate ? dataProject.date : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "date")}
@@ -151,6 +165,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, setModalOpen }) => {
         <span>Description du projet </span>
         <textarea
           name="description"
+          id="description"
           placeholder="description du projet"
           defaultValue={toUpdate ? dataProject.description : ""}
           onChange={(e) => getDataInputProjects(e.target.value, "description")}
