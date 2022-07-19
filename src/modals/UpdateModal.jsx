@@ -29,6 +29,7 @@ const UpdateModal = ({ modalStyle, setModalOpen, toUpdate, idProject }) => {
           image64={image64}
           toUpdate={toUpdate}
           idProjectToUpdate={idProject}
+          setModalOpen={setModalOpen}
         />
       </div>
     </div>

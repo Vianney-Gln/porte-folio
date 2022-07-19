@@ -19,10 +19,7 @@ const ManageProjects = ({ setToUpdate, setModalOpen, setIdProject }) => {
                     return (
                       <li key={project.id}>
                         <h3>{project.name}</h3>
-                        <img
-                          src={`data:${project.type};base64,${project.base64}`}
-                          alt={project.name}
-                        />
+                        <img src={project.urlimage} alt={project.name} />
                         <div className="buttons">
                           <button
                             type="button"
