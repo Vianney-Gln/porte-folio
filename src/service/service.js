@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://portfolio-vianney.herokuapp.com";
+const baseUrl = "http://localhost:3001";
 
 /**
  * Function uploading and changing the photo

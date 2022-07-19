@@ -7,9 +7,8 @@ import {
   deleteImageProjectById,
 } from "../service/service";
 
-const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
+const FormCreateProjects = ({ idProjectToUpdate, toUpdate }) => {
   // States
-  const [fileImageProject, setFileImageProject] = useState(null); // state manage images projects
   const [messageProject, setMessageProject] = useState(""); // state manage messages
   const [dataProject, setDataProject] = useState({}); //state manage data projects
 
@@ -18,6 +17,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
     if (toUpdate) {
       getProjectById(idProjectToUpdate).then((result) => {
         setDataProject(result);
+        console.log(result);
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,37 +39,14 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
    */
   const runCreateProject = () => {
     const token = localStorage.getItem("token_access_portfolio");
-
-    if (fileImageProject) {
-      var reader = new FileReader();
-      reader.onload = function (readerEvt) {
-        var binaryString = readerEvt.target.result;
-
-        const data = {
-          type: fileImageProject.type,
-          base64: btoa(binaryString),
-          ...dataProject,
-        };
-        createProject(data, `Bearer ${token}`)
-          .then(() => {
-            setMessageProject("projet créé");
-          })
-          .catch((err) => {
-            console.log(err);
-            setMessageProject("erreur lors de la création du projet");
-          });
-      };
-      reader.readAsBinaryString(fileImageProject);
-    } else {
-      createProject(dataProject, `Bearer ${token}`)
-        .then(() => {
-          setMessageProject("projet créé");
-        })
-        .catch((err) => {
-          console.log(err);
-          setMessageProject("erreur lors de la création du projet");
-        });
-    }
+    createProject(dataProject, `Bearer ${token}`)
+      .then(() => {
+        setMessageProject("projet créé");
+      })
+      .catch((err) => {
+        console.log(err);
+        setMessageProject("erreur lors de la création du projet");
+      });
   };
 
   /**
@@ -77,36 +54,14 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
    */
   const runUpdateProject = () => {
     const token = localStorage.getItem("token_access_portfolio");
-    if (fileImageProject) {
-      var reader = new FileReader();
-      reader.onload = function (readerEvt) {
-        var binaryString = readerEvt.target.result;
-        const data = {
-          type: fileImageProject.type,
-          base64: btoa(binaryString),
-          ...dataProject,
-        };
-
-        updateProjectById(data, idProjectToUpdate, `Bearer ${token}`)
-          .then(() => {
-            setMessageProject("projet modifié");
-          })
-          .catch((err) => {
-            console.log(err);
-            setMessageProject("erreur lors de la modification du projet");
-          });
-      };
-      reader.readAsBinaryString(fileImageProject);
-    } else {
-      updateProjectById(dataProject, idProjectToUpdate, `Bearer ${token}`)
-        .then(() => {
-          setMessageProject("projet modifié");
-        })
-        .catch((err) => {
-          console.log(err);
-          setMessageProject("erreur lors de la modification du projet");
-        });
-    }
+    updateProjectById(dataProject, idProjectToUpdate, `Bearer ${token}`)
+      .then(() => {
+        setMessageProject("projet modifié");
+      })
+      .catch((err) => {
+        console.log(err);
+        setMessageProject("erreur lors de la modification du projet");
+      });
   };
   /**
    * Function running the service function deleteImageProjectById
@@ -148,11 +103,13 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
         ></input>
       </label>
       <label htmlFor="image-project">
-        <span>upload image du projet </span>
+        <span>url image du projet </span>
         <input
-          type="file"
+          type="text"
           name="image-project"
-          onChange={(e) => setFileImageProject(e.target.files[0])}
+          placeholder="url de l'image"
+          defaultValue={toUpdate ? dataProject.urlimage : ""}
+          onChange={(e) => getDataInputProjects(e.target.value, "urlImage")}
         ></input>
       </label>
       {toUpdate && (
@@ -160,7 +117,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, image64 }) => {
           <img
             id="imageProjectToUpload"
             className="image-preview"
-            src={`data:${image64.type};base64,${image64.base64}`}
+            src={dataProject.urlimage ? dataProject.urlimage : ""}
             alt="img-preview"
           />
           <button
