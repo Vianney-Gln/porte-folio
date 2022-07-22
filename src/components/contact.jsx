@@ -38,6 +38,8 @@ const Contact = () => {
       errorMessage.includes("length must be at least 20 characters long")
     ) {
       setMessage("le message doit faire au moins 20 caractères de long");
+    } else if (errorMessage.includes("must be a valid email")) {
+      setMessage("l'adresse email n'est pas valide.");
     } else {
       setMessage("désolé, il y a eu une erreur lors de l'envois du message");
     }
@@ -49,11 +51,14 @@ const Contact = () => {
       .then(() => {
         setMessage("merci pour votre message!");
         setDataMail({});
-        document.getElementById("name").value = "";
-        document.getElementById("firstname").value = "";
-        document.getElementById("object").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("message").value = "";
+        setTimeout(() => {
+          document.getElementById("name").value = "";
+          document.getElementById("firstname").value = "";
+          document.getElementById("object").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+          setMessage("");
+        }, 4000);
       })
       .catch((err) => {
         const error = err.response.data.validationError[0].message;
@@ -118,7 +123,10 @@ const Contact = () => {
                 onChange={(e) => getDataInput(e.target.value, "message")}
               />
             </label>
-            <button type="submit">Envoyer</button>
+            <div className="container-button-message">
+              <button type="submit">Envoyer</button>
+              <span className="message">{message ? message : ""}</span>
+            </div>
           </form>
         </FadeIn>
         <FadeIn>
