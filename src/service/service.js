@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://portfolio-vianney.herokuapp.com";
+const baseUrl = "http://localhost:3001";
 
 /**
  * Function uploading and changing the photo
@@ -74,7 +74,6 @@ export const getProjects = () => {
  * @returns {promise}
  */
 export const createProject = (data, token) => {
-  console.log(data);
   return axios({
     method: "post",
     data: data,
@@ -136,6 +135,19 @@ export const deleteImageProjectById = (id, token) => {
       headers: { authorization: token },
     })
     .then((result) => result.data);
+};
+
+/**
+ * Function sending an email from the contact form
+ * @param {object} data
+ * @returns {promise}
+ */
+export const sendEmail = (data) => {
+  return axios({
+    method: "post",
+    data: data,
+    url: `${baseUrl}/api/portFolio_Vianney/contactForm`,
+  }).then((result) => result.data);
 };
 
 export default uploadPhoto;
