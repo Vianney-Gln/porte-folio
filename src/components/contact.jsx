@@ -22,7 +22,7 @@ const Contact = () => {
 
   const manageErrorMessage = (errorMessage) => {
     if (errorMessage.includes("pattern:")) {
-      setMessage("caracteres speciaux non autorisés");
+      setMessage("caractères spéciaux non autorisés");
     } else if (
       errorMessage.includes(
         "length must be less than or equal to 100 characters long"
