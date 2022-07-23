@@ -44,6 +44,7 @@ const FormPhoto = () => {
   return (
     <form className="form-photo">
       {/* Part upload photo */}
+      <h2>Changer la photo de l'introduction</h2>
       <div className="container-avatar">
         <img
           id="photoToUpload"
@@ -51,7 +52,6 @@ const FormPhoto = () => {
           alt="avatar"
         />
       </div>
-      <h2>Changer la photo de l'introduction</h2>
       <div className="change-button">
         <label htmlFor="image">
           <input
