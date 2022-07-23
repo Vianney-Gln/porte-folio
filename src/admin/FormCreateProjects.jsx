@@ -99,7 +99,7 @@ const FormCreateProjects = ({ idProjectToUpdate, toUpdate, setModalOpen }) => {
   return (
     <form className="form-projects">
       {/* Part projects */}
-      <h2>{!toUpdate ? "Nouveaux projets" : "modifier un projet"}</h2>
+      <h2>{!toUpdate ? "Nouveaux projets" : "Modifier un projet"}</h2>
       <label htmlFor="name">
         <span>Nom du projet: </span>
         <input
