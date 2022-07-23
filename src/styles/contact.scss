@@ -54,6 +54,13 @@
     }
     span.message {
       margin-left: 5px;
+      padding: 5px;
+      font-size: 0.8rem;
+      border-radius: 5px;
+      background-color: black;
+      overflow-x: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
   .mail,
