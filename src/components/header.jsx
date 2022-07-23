@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
+// image
 import avatar from "../images/avatar-vianney-200.png";
+// burger
 import Hamburger from "hamburger-react";
 //style
 import "../styles/header.scss";
@@ -21,23 +24,23 @@ const Header = ({ isOpen, setOpen }) => {
   return (
     <header className={displayHeader ? "blackHeader" : "transitionHeader"}>
       <div className="avatar">
-        <a href="#accueil">
+        <Link to="/#accueil">
           <img src={avatar} alt="avatar-vianney" />
-        </a>
+        </Link>
         <nav className="nav-header">
           {!displayHeader && (
             <ul className="list-header">
               <li>
-                <a href="#a-propos">À propos</a>
+                <Link to={"/#a-propos"}>À propos</Link>
               </li>
               <li>
-                <a href="#competence">Compétences</a>
+                <Link to={"/#competence"}>Compétences</Link>
               </li>
               <li>
-                <a href="#porte-folio">Portfolio</a>
+                <Link to="/#porte-folio">Portfolio</Link>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <Link to="/#contact">Contact</Link>
               </li>
             </ul>
           )}
