@@ -94,3 +94,21 @@ div.modal {
     }
   }
 }
+
+@media screen and (max-width: 720px) {
+  div.modal {
+    div.modal-update {
+      form.form-projects {
+        h2 {
+          margin-top: 10px;
+        }
+        label {
+          width: 90%;
+        }
+        div.container-image-preview {
+          display: none;
+        }
+      }
+    }
+  }
+}
