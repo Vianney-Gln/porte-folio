@@ -1,6 +1,8 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
+// anim
 import FadeIn from "../animation/animation";
-//styles
+// styles
 import "../styles/footer.scss";
 
 const Footer = () => {
@@ -12,23 +14,23 @@ const Footer = () => {
           <nav className="nav-footer">
             <ul className="list-footer">
               <li className="element-list-footer">
-                <a href="#accueil">Revenir en haut</a>
+                <Link to={"/#accueil"}>Revenir en haut</Link>
               </li>
               <li className="element-list-footer">|</li>
               <li className="element-list-footer">
-                <a href="#a-propos">A propos</a>
+                <Link to={"/#a-propos"}>A propos</Link>
               </li>
               <li className="element-list-footer">|</li>
               <li className="element-list-footer">
-                <a href="#competence">Compétences</a>
+                <Link to="/#competence">Compétences</Link>
               </li>
               <li className="element-list-footer">|</li>
               <li className="element-list-footer">
-                <a href="#porte-folio">Portfolio</a>
+                <Link to="/#porte-folio">Portfolio</Link>
               </li>
               <li className="element-list-footer">|</li>
               <li className="element-list-footer">
-                <a href="#contact">Contact</a>
+                <Link to="/#contact">Contact</Link>
               </li>
             </ul>
           </nav>
