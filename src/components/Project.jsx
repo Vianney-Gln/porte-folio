@@ -24,7 +24,7 @@ const Project = ({ project }) => {
       >
         {projectOpen ? "retour" : "plus d'infos"}
       </button>
-      {projectOpen && <a href={project.lien}>Visiter le site</a>}
+      {projectOpen && <a href={project.url}>Visiter le site</a>}
       {!projectOpen && <span className="date-project">du {project.date}</span>}
     </div>
   );
