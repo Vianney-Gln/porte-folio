@@ -77,6 +77,19 @@
       border-radius: 5px;
       display: flex;
       flex-direction: column;
+      ::-webkit-scrollbar {
+        /* Scrollbars */
+        width: 5px;
+        background-color: #c4c4c4;
+        border-radius: 20px;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid white; /* creates padding around scroll thumb */
+      }
+      ::-moz-scrollbar {
+        display: none;
+      }
 
       p.description {
         margin-bottom: 40px;

@@ -18,7 +18,7 @@ const Heros = ({ isOpen, setOpen }) => {
             <p>Développeur web - junior</p>
           </div>
           <a className="boutton-contactez-moi-desktop" href="#contact">
-            Contactez moi!
+            Contactez moi
           </a>
         </div>
       </FadeIn>
