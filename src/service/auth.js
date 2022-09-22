@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://portfolio-vianney.herokuapp.com";
+const baseUrl = "https://api.portfolio.vgeloen.fr";
 /**
  * Function verifying if a user is authentificated
  * @param {*} token
